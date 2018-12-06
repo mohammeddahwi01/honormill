@@ -1,0 +1,245 @@
+Product Name,Product SKU,Template Name,Option Title,Option ID,Option Value ID,Option Value Title,Price,Price Type,Option Value SKU,Option Value Qty,Option Value Manage Stock,Option Value Cost,Option Value Description,Fast Ship,Custom Order
+testproduct,testproduct,ae | 01A Aeon 9: Fiberglass,Select a color:,30590,158318,Black1,10,fixed,,3,0,0,,0,1
+,,,,30590,158319,White1,0,fixed,,4,0,0,,0,1
+,,,,30590,158320,Ivory1,15,fixed,,5,0,0,,0,1
+,,,,30590,158321,Warm gray1,0,fixed,,6,0,0,,0,1
+,,,,30590,158322,Dark red1,0,fixed,,7,0,0,,0,1
+,,,,30590,158323,Autumn green1,0,fixed,,8,0,0,,0,1
+,,,,30590,158324,Lemon yellow1,0,fixed,,0,0,0,,0,1
+,,,,30590,158325,Hot orange1,0,fixed,,0,0,0,,0,1
+,,,,30590,158326,Tibet blue1,0,fixed,,0,0,0,,0,1
+,,,,30590,158327,Spring green1,0,fixed,,0,0,0,,0,1
+,,,,30590,158328,Flamingo pink1,0,fixed,,0,0,0,,0,1
+,,,,30590,158329,Latte brown1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 1: Grade B,Select a color:,30591,158330,Black1,0,fixed,01A-B201-Black,0,0,0,,0,1
+,,,,30591,158331,Gray1,0,fixed,01A-B206-Gray,0,0,0,,0,1
+,,,,30591,158332,Brown1,0,fixed,01A-B202-Brown,0,0,0,,0,1
+,,,,30591,158333,Green1,0,fixed,01A-B203-Green,0,0,0,,0,1
+,,,,30591,158334,Strawberry1,0,fixed,01A-B204-Strawberry,0,0,0,,0,1
+,,,,30591,158335,Red1,0,fixed,01A-B208-Red,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 2: Grade T,Select a color:,30592,158336,Red1,0,fixed,01A-T501-red,0,0,0,,0,1
+,,,,30592,158337,Black1,0,fixed,01A-T502-black,0,0,0,,0,1
+,,,,30592,158338,Dark blue1,0,fixed,01A-T503-dark-blue,0,0,0,,0,1
+,,,,30592,158339,Brown1,0,fixed,01A-T504-brown,0,0,0,,0,1
+,,,,30592,158340,Warm gray1,0,fixed,01A-T505-warm-grey,0,0,0,,0,1
+,,,,30592,158341,Light gray1,0,fixed,01A-T506-light-grey,0,0,0,,0,1
+,,,,30592,158342,Burgundy1,0,fixed,01A-T507-burgundy,0,0,0,,0,1
+,,,,30592,158343,Light blue1,0,fixed,01A-T508-light-blue,0,0,0,,0,1
+,,,,30592,158344,Dark green1,0,fixed,01A-T509-dark-green,0,0,0,,0,1
+,,,,30592,158345,Orange1,0,fixed,01A-T511-orange,0,0,0,,0,1
+,,,,30592,158346,Burnt orange1,0,fixed,01A-T512-burnt-orange,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 8: painted beech,Select a color:,30593,158347,Yellow1,0,fixed,,0,0,0,,0,1
+,,,,30593,158348,Dark red1,0,fixed,,0,0,0,,0,1
+,,,,30593,158349,Grass green1,0,fixed,,0,0,0,,0,1
+,,,,30593,158350,Gray1,0,fixed,,0,0,0,,0,1
+,,,,30593,158351,Off-white1,0,fixed,,0,0,0,,0,1
+,,,,30593,158352,Light blue1,0,fixed,,0,0,0,,0,1
+,,,,30593,158353,Light gold1,0,fixed,,0,0,0,,0,1
+,,,,30593,158354,Light gray1,0,fixed,,0,0,0,,0,1
+,,,,30593,158355,Light orange1,0,fixed,,0,0,0,,0,1
+,,,,30593,158356,Midnight black1,0,fixed,,0,0,0,,0,1
+,,,,30593,158357,Orange1,0,fixed,,0,0,0,,0,1
+,,,,30593,158358,White1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 3: Standard Leather,Select a color:,30597,158374,Black1,0,fixed,01A-ML001-Black,0,0,0,,0,1
+,,,,30597,158375,Chocolate brown1,0,fixed,01A-ML025-Chocolate-Brown,0,0,0,,0,1
+,,,,30597,158376,Brown1,0,fixed,01A-ML005-Brown,0,0,0,,0,1
+,,,,30597,158377,Dark red1,0,fixed,01A-ML023-Dark-Red,0,0,0,,0,1
+,,,,30597,158378,Red1,0,fixed,01A-ML003-Red,0,0,0,,0,1
+,,,,30597,158379,Beige1,0,fixed,01A-ML004-Beige,0,0,0,,0,1
+,,,,30597,158380,Cream white1,0,fixed,01A-ML002-Cream-White,0,0,0,,0,1
+,,,,30597,158381,White1,0,fixed,01A-ML007-White,0,0,0,,0,1
+testproduct,testproduct,cb | 03C Control Brand: Parma,Select a color:,30598,158382,Gold1,0,fixed,03C-FAS1103-gold,0,0,0,,0,1
+,,,,30598,158383,Black/white1,0,fixed,03C-FAS1103-b-w,0,0,0,,0,1
+,,,,30598,158384,Grey1,0,fixed,03C-FAS1103-grey,0,0,0,,0,1
+,,,,30598,158385,Brown1,0,fixed,03C-FAS1103-brown,0,0,0,,0,1
+testproduct,testproduct,cb | 03C-S Control Brand Silnovo: 07 Wing Chair,Select a color:,30599,158386,Black leather1,0,fixed,03C-S-FEC3019BLK,0,0,0,,0,1
+,,,,30599,158387,Mid black leather1,0,fixed,03C-S-FEC3019MBLK,0,0,0,,0,1
+,,,,30599,158388,Brown leather1,0,fixed,03C-S-FEC3019BROWN,0,0,0,,0,1
+,,,,30599,158389,White leather1,0,fixed,03C-S-FEC3019CWHT,0,0,0,,0,1
+,,,,30599,158390,Orange fabric1,0,fixed,03C-S-FEC3019ORG,0,0,0,,0,1
+,,,,30599,158391,Tweed fabric1,0,fixed,03C-S-FEC3019TWBRN,0,0,0,,0,1
+testproduct,testproduct,fm | 08F Finemod Imports: Egg,Select a color:,30600,158392,White1,0,fixed,08F-FMI9011-white,0,0,0,,0,1
+,,,,30600,158393,Black1,0,fixed,08F-FMI9011-black,0,0,0,,0,1
+,,,,30600,158394,Gray1,0,fixed,08F-FMI9011-gray,0,0,0,,0,1
+,,,,30600,158395,Red1,0,fixed,08F-FMI9011-red,0,0,0,,0,1
+,,,,30600,158396,Yellow1,0,fixed,08F-FMI9011-yellow,0,0,0,,0,1
+,,,,30600,158397,Blue1,0,fixed,08F-FMI9011-blue,0,0,0,,0,1
+,,,,30600,158398,Green1,0,fixed,08F-FMI9011-green,0,0,0,,0,1
+testproduct,testproduct,il | 11I Innovation: cotton poly (redundant),Select a color:,30601,158399,Goose Grey1,0,fixed,11I-570_Unique_Goose_Grey,0,0,0,,0,1
+,,,,30601,158400,Smokey Grey1,0,fixed,11I-571_Unique_Smookey_Grey,0,0,0,,0,1
+,,,,30601,158401,Dusty Bordeaux1,0,fixed,11I-572_Unique_Dusty_Bordeaux,0,0,0,,0,1
+,,,,30601,158402,Hosta Blue1,0,fixed,11I-573_Unique_Hosta_Blue,0,0,0,,0,1
+,,,,30601,158403,Slate Indigo1,0,fixed,11I-574_Unique_Slate_Indigo,0,0,0,,0,1
+testproduct,testproduct,il | 11I Innovation: faux leather,Select a color:,30602,158404,Leather Look Brown Vintage1,0,fixed,11I-461_Leather_Look_Brown_Vintage,0,0,0,,0,1
+,,,,30602,158405,Leather Look Black1,0,fixed,11I-582_Leather_Look_Black,0,0,0,,0,1
+,,,,30602,158406,Leather Look White1,0,fixed,11I-588_Leather_Look_White,0,0,0,,0,1
+,,,,30602,158407,Nubucko Lava1,0,fixed,11I-592_Nubucko_Lava,0,0,0,,0,1
+,,,,30602,158408,Nubucko Dark Sahara1,0,fixed,11I-593_Nubucko_Dark_Sahara,0,0,0,,0,1
+testproduct,testproduct,il | 11I Innovation: poly linen mix,Select a color:,30603,158409,Nist Black1,0,fixed,11I-514_Nist_Black,0,0,0,,0,1
+,,,,30603,158410,Nist Blue1,0,fixed,11I-515_Nist_Blue,0,0,0,,0,1
+,,,,30603,158411,Heavy Natch Natural1,0,fixed,11I-601_Heavy_Natch_Natural,0,0,0,,0,1
+,,,,30603,158412,Heavy Natch Brown Black1,0,fixed,11I-602_Heavy_Natch_Brown_Black,0,0,0,,0,1
+,,,,30603,158413,Natural Khaki1,0,fixed,11I-672_Natural_Khaki,0,0,0,,0,1
+testproduct,testproduct,mo | 14M Modern Furniture MO: Boucle (redundant),Select a color:,30605,158437,Black1,0,fixed,H-14453-2 Blk,0,0,0,,0,1
+,,,,30605,158438,Red1,0,fixed,H-14453-1,0,0,0,,0,1
+testproduct,testproduct,mo | 14M Modern Furniture MO-MJ: Tweed (redundant),Select a color:,30606,158439,Red1,0,fixed,MO-4692-10,0,0,0,,0,1
+,,,,30606,158440,Brown1,0,fixed,MO-4692-2,0,0,0,,0,1
+,,,,30606,158441,Wheat1,0,fixed,MO-4692-23,0,0,0,,0,1
+,,,,30606,158442,Khaki1,0,fixed,MO-4692-27,0,0,0,,0,1
+,,,,30606,158443,Black1,0,fixed,MO-4692-41,0,0,0,,0,1
+,,,,30606,158444,Orange1,0,fixed,MO-4692-47,0,0,0,,0,1
+,,,,30606,158445,Blue1,0,fixed,MO-4692-50,0,0,0,,0,1
+,,,,30606,158446,Mid brown1,0,fixed,MO-4692-55,0,0,0,,0,1
+,,,,30606,158447,Dark brown1,0,fixed,MO-4692-56,0,0,0,,0,1
+,,,,30606,158448,Sand1,0,fixed,MO-4692-63,0,0,0,,0,1
+,,,,30606,158449,Light orange1,0,fixed,MO-4692-64,0,0,0,,0,1
+,,,,30606,158450,Light brown1,0,fixed,MO-4692-94,0,0,0,,0,1
+,,,,30606,158451,Warm brown1,0,fixed,MO-4692-95,0,0,0,,0,1
+,,,,30606,158452,Tangerine1,0,fixed,MO-4692-49,0,0,0,,0,1
+testproduct,testproduct,md | 15M Modloft: Prince Bed,Select a color:,30607,158453,Dark slate1,0,fixed,15M-MD319-Dark-Slate,0,0,0,,0,1
+,,,,30607,158454,White1,0,fixed,15M-MD319-White,0,0,0,,0,1
+,,,,30607,158455,Light grey1,0,fixed,15M-MD319-Light-Gray,0,0,0,,0,1
+testproduct,testproduct,mf | 16M Modway Furniture: Fabrics B (Christopher),Select a color:,30608,158456,Yellow1,0,fixed,16M-EEI-yellow,0,0,0,,0,1
+,,,,30608,158457,Wheatgrass1,0,fixed,16M-EEI-wheatgrass,0,0,0,,0,1
+,,,,30608,158458,Azure1,0,fixed,16M-EEI-azure,0,0,0,,0,1
+,,,,30608,158459,Red1,0,fixed,16M-EEI-red,0,0,0,,0,1
+,,,,30608,158460,Oatmeal1,0,fixed,16M-EEI-oatmeal,0,0,0,,0,1
+,,,,30608,158461,Lagua1,0,fixed,16M-EEI-lagua,0,0,0,,0,1
+,,,,30608,158462,Light gray1,0,fixed,16M-EEI-light-gray,0,0,0,,0,1
+,,,,30608,158463,Granite1,0,fixed,16M-EEI-granite,0,0,0,,0,1
+,,,,30608,158464,Gray1,0,fixed,16M-EEI-gray,0,0,0,,0,1
+testproduct,testproduct,mf | 16M Modway Furniture: Fabric (loft/Florence/Geneva),Select a color:,30609,158465,Azure1,0,fixed,,0,0,0,,0,1
+,,,,30609,158466,Gray1,0,fixed,,0,0,0,,0,1
+,,,,30609,158467,Granite1,0,fixed,,0,0,0,,0,1
+,,,,30609,158468,Light gray1,0,fixed,,0,0,0,,0,1
+,,,,30609,158469,Oatmeal1,0,fixed,,0,0,0,,0,1
+,,,,30609,158470,Wheatgrass1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,il | 11I Innovation: polyester,Select a fabric:,30604,158414,Begum Olive1,0,fixed,11I-502-Begum-Olive,0,0,0,,0,1
+,,,,30604,158415,Mixed Dance burned orange1,0,fixed,11I-524_Mixed_Dance_burned_orange,0,0,0,,0,1
+,,,,30604,158416,Mixed Dance Light Blue1,0,fixed,11I-525_Mixed_Dance_Light_Blue,0,0,0,,0,1
+,,,,30604,158417,Mixed Dance Plum1,0,fixed,11I-526_Mixed_Dance_Plum,0,0,0,,0,1
+,,,,30604,158418,Mixed Dance Natural1,0,fixed,11I-527_Mixed_Dance_Natural,0,0,0,,0,1
+,,,,30604,158419,Mixed Dance Blue1,0,fixed,11I-528_Mixed_Dance_Blue,0,0,0,,0,1
+,,,,30604,158420,Soft Pacific Pearl1,0,fixed,11I-552_Soft_Pacific_Pearl,0,0,0,,0,1
+,,,,30604,158421,Soft Sapphire1,0,fixed,11I-553_Soft_Sapphire,0,0,0,,0,1
+,,,,30604,158422,Soft Mustard Flower1,0,fixed,11I-554_Soft_Mustard_Flower,0,0,0,,0,1
+,,,,30604,158423,Twist Charcoal1,0,fixed,11I-563_Twist_Charcoal,0,0,0,,0,1
+,,,,30604,158424,Twist Black1,0,fixed,11I-564_Twist_Black,0,0,0,,0,1
+,,,,30604,158425,Twist Granite1,0,fixed,11I-565_Twist_Granite,0,0,0,,0,1
+,,,,30604,158426,Classic Medium Grey1,0,fixed,11I-631_Classic_Medium_Grey,0,0,0,,0,1
+,,,,30604,158427,Basic Dark Grey1,0,fixed,11I-736_Basic_Dark_Grey,0,0,0,,0,1
+,,,,30604,158428,Basic Light Grey1,0,fixed,11I-741_Basic_Light_Grey,0,0,0,,0,1
+,,,,30604,158429,Basic Gravel1,0,fixed,11I-745_Basic_Gravel,0,0,0,,0,1
+,,,,30604,158430,Basic Orange1,0,fixed,11I-751_Orange_Basic,0,0,0,,0,1
+,,,,30604,158431,Begum Sand1,0,fixed,11I-501_Begum_Sand,0,0,0,,0,1
+,,,,30604,158432,Begum Dark Brown1,0,fixed,11I-503_Begum_Dark_Brown,0,0,0,,0,1
+,,,,30604,158433,Begum Red1,0,fixed,11I-504_Begum_Red,0,0,0,,0,1
+,,,,30604,158434,Mixed Dance Dark Brown1,0,fixed,11I-520_Mixed_Dance_Dark_Brown,0,0,0,,0,1
+,,,,30604,158435,Mixed Dance Grey1,0,fixed,11I-521_Mixed_Dance_Grey,0,0,0,,0,1
+,,,,30604,158436,Mixed dance black brown1,0,fixed,11I-523_Mixed_dance_black_brown,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 7: plywood veneer,Select a finish:,30594,158359,Walnut1,0,fixed,,0,0,0,,0,1
+,,,,30594,158360,Cherry1,0,fixed,,0,0,0,,0,1
+,,,,30594,158361,Rosewood1,0,fixed,,0,0,0,,0,1
+,,,,30594,158362,White oak1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 5: solid wood matte finish,Select a finish:,30595,158363,American ash - black stain1,0,fixed,,0,0,0,,0,1
+,,,,30595,158364,American maple - natural1,0,fixed,,0,0,0,,0,1
+,,,,30595,158365,Birch - black pigment1,0,fixed,,0,0,0,,0,1
+,,,,30595,158366,American walnut - light1,0,fixed,,0,0,0,,0,1
+,,,,30595,158367,American white oak - natural1,0,fixed,,0,0,0,,0,1
+,,,,30595,158368,Beech - natural1,0,fixed,,0,0,0,,0,1
+,,,,30595,158369,American ash - natural1,0,fixed,,0,0,0,,0,1
+,,,,30595,158370,American ash - light walnut stain1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 6: solid wood wax finish,Select a finish:,30596,158371,American walnut1,0,fixed,,0,0,0,,0,1
+,,,,30596,158372,American white oak1,0,fixed,,0,0,0,,0,1
+,,,,30596,158373,American maple1,0,fixed,,0,0,0,,0,1
+testproduct,testproduct,ae | 01A Aeon 4: Cow Pony Hide Leather (premium),Select a hide:,30589,158315,"Black, brown, white hair1",0,fixed,01A-ML008-Pony-A,0,0,0,,0,1
+,,,,30589,158316,Black and white hair1,0,fixed,01A-ML018-Pony-B,0,0,0,,0,1
+,,,,30589,158317,Brown and white hair1,0,fixed,01A-ML019-Pony-C,0,0,0,,0,1
+testProduct2,testProduct2,ae | 01A Aeon 1: Grade B,Select a color:,30611,158474,Black,0,fixed,01A-B201-Black,0,0,0,,1,0
+,,,,30611,158475,Gray,0,fixed,01A-B206-Gray,0,0,0,,1,0
+,,,,30611,158476,Brown,0,fixed,01A-B202-Brown,0,0,0,,1,0
+,,,,30611,158477,Green,0,fixed,01A-B203-Green,0,0,0,,1,0
+,,,,30611,158478,Strawberry,0,fixed,01A-B204-Strawberry,0,0,0,,1,0
+,,,,30611,158479,Red,0,fixed,01A-B208-Red,0,0,0,,1,0
+testProduct2,testProduct2,ae | 01A Aeon 8: painted beech,Select a color:,30612,158480,Yellow,0,fixed,,0,0,0,,1,0
+,,,,30612,158481,Dark red,0,fixed,,0,0,0,,1,0
+,,,,30612,158482,Grass green,0,fixed,,0,0,0,,1,0
+,,,,30612,158483,Gray,0,fixed,,0,0,0,,1,0
+,,,,30612,158484,Off-white,0,fixed,,0,0,0,,1,0
+,,,,30612,158485,Light blue,0,fixed,,0,0,0,,1,0
+,,,,30612,158486,Light gold,0,fixed,,0,0,0,,1,0
+,,,,30612,158487,Light gray,0,fixed,,0,0,0,,1,0
+,,,,30612,158488,Light orange,0,fixed,,0,0,0,,1,0
+,,,,30612,158489,Midnight black,0,fixed,,0,0,0,,1,0
+,,,,30612,158490,Orange,0,fixed,,0,0,0,,1,0
+,,,,30612,158491,White,0,fixed,,0,0,0,,1,0
+testProduct2,testProduct2,ae | 01A Aeon 3: Standard Leather,Select a color:,30614,158500,Black,0,fixed,01A-ML001-Black,0,0,0,,1,0
+,,,,30614,158501,Chocolate brown,0,fixed,01A-ML025-Chocolate-Brown,0,0,0,,1,0
+,,,,30614,158502,Brown,0,fixed,01A-ML005-Brown,0,0,0,,1,0
+,,,,30614,158503,Dark red,0,fixed,01A-ML023-Dark-Red,0,0,0,,1,0
+,,,,30614,158504,Red,0,fixed,01A-ML003-Red,0,0,0,,1,0
+,,,,30614,158505,Beige,0,fixed,01A-ML004-Beige,0,0,0,,1,0
+,,,,30614,158506,Cream white,0,fixed,01A-ML002-Cream-White,0,0,0,,1,0
+,,,,30614,158507,White,0,fixed,01A-ML007-White,0,0,0,,1,0
+testProduct2,testProduct2,cb | 03C-S Control Brand Silnovo: 07 Wing Chair,Select a color:,30615,158508,Black leather,0,fixed,03C-S-FEC3019BLK,0,0,0,,1,0
+,,,,30615,158509,Mid black leather,0,fixed,03C-S-FEC3019MBLK,0,0,0,,1,0
+,,,,30615,158510,Brown leather,0,fixed,03C-S-FEC3019BROWN,0,0,0,,1,0
+,,,,30615,158511,White leather,0,fixed,03C-S-FEC3019CWHT,0,0,0,,1,0
+,,,,30615,158512,Orange fabric,0,fixed,03C-S-FEC3019ORG,0,0,0,,1,0
+,,,,30615,158513,Tweed fabric,0,fixed,03C-S-FEC3019TWBRN,0,0,0,,1,0
+testProduct2,testProduct2,ae | 01A Aeon 5: solid wood matte finish,Select a finish:,30613,158492,American ash - black stain,0,fixed,,0,0,0,,1,0
+,,,,30613,158493,American maple - natural,0,fixed,,0,0,0,,1,0
+,,,,30613,158494,Birch - black pigment,0,fixed,,0,0,0,,1,0
+,,,,30613,158495,American walnut - light,0,fixed,,0,0,0,,1,0
+,,,,30613,158496,American white oak - natural,0,fixed,,0,0,0,,1,0
+,,,,30613,158497,Beech - natural,0,fixed,,0,0,0,,1,0
+,,,,30613,158498,American ash - natural,0,fixed,,0,0,0,,1,0
+,,,,30613,158499,American ash - light walnut stain,0,fixed,,0,0,0,,1,0
+testProduct2,testProduct2,ae | 01A Aeon 4: Cow Pony Hide Leather (premium),Select a hide:,30610,158471,"Black, brown, white hair",0,fixed,01A-ML008-Pony-A,0,0,0,,1,0
+,,,,30610,158472,Black and white hair,0,fixed,01A-ML018-Pony-B,0,0,0,,1,0
+,,,,30610,158473,Brown and white hair,0,fixed,01A-ML019-Pony-C,0,0,0,,1,0
+test-phx,test-phx,ae | 01A Aeon 9: Fiberglass,Select a color:,30617,158517,Black,0,fixed,,0,0,0,,1,1
+,,,,30617,158518,White,0,fixed,,0,0,0,,1,1
+,,,,30617,158519,Ivory,0,fixed,,0,0,0,,1,1
+,,,,30617,158520,Warm gray,0,fixed,,0,0,0,,1,1
+,,,,30617,158521,Dark red,0,fixed,,0,0,0,,1,1
+,,,,30617,158522,Autumn green,0,fixed,,0,0,0,,1,1
+,,,,30617,158523,Lemon yellow,0,fixed,,0,0,0,,1,1
+,,,,30617,158524,Hot orange,0,fixed,,0,0,0,,1,1
+,,,,30617,158525,Tibet blue,0,fixed,,0,0,0,,1,1
+,,,,30617,158526,Spring green,0,fixed,,0,0,0,,1,1
+,,,,30617,158527,Flamingo pink,0,fixed,,0,0,0,,1,1
+,,,,30617,158528,Latte brown,0,fixed,,0,0,0,,1,1
+test-phx,test-phx,ae | 01A Aeon 1: Grade B,Select a color:,30618,158529,Black,0,fixed,01A-B201-Black,0,0,0,,1,1
+,,,,30618,158530,Gray,0,fixed,01A-B206-Gray,0,0,0,,1,1
+,,,,30618,158531,Brown,0,fixed,01A-B202-Brown,0,0,0,,1,1
+,,,,30618,158532,Green,0,fixed,01A-B203-Green,0,0,0,,1,1
+,,,,30618,158533,Strawberry,0,fixed,01A-B204-Strawberry,0,0,0,,1,1
+,,,,30618,158534,Red,0,fixed,01A-B208-Red,0,0,0,,1,1
+test-phx,test-phx,ae | 01A Aeon 8: painted beech,Select a color:,30619,158535,Yellow,0,fixed,,0,0,0,,1,1
+,,,,30619,158536,Dark red,0,fixed,,0,0,0,,1,1
+,,,,30619,158537,Grass green,0,fixed,,0,0,0,,1,1
+,,,,30619,158538,Gray,0,fixed,,0,0,0,,1,1
+,,,,30619,158539,Off-white,0,fixed,,0,0,0,,1,1
+,,,,30619,158540,Light blue,0,fixed,,0,0,0,,1,1
+,,,,30619,158541,Light gold,0,fixed,,0,0,0,,1,1
+,,,,30619,158542,Light gray,0,fixed,,0,0,0,,1,1
+,,,,30619,158543,Light orange,0,fixed,,0,0,0,,1,1
+,,,,30619,158544,Midnight black,0,fixed,,0,0,0,,1,1
+,,,,30619,158545,Orange,0,fixed,,0,0,0,,1,1
+,,,,30619,158546,White,0,fixed,,0,0,0,,1,1
+test-phx,test-phx,ae | 01A Aeon 7: plywood veneer,Select a finish:,30620,158547,Walnut,0,fixed,,0,0,0,,1,1
+,,,,30620,158548,Cherry,0,fixed,,0,0,0,,1,1
+,,,,30620,158549,Rosewood,0,fixed,,0,0,0,,1,1
+,,,,30620,158550,White oak,0,fixed,,0,0,0,,1,1
+test-phx,test-phx,ae | 01A Aeon 5: solid wood matte finish,Select a finish:,30621,158551,American ash - black stain,0,fixed,,0,0,0,,1,1
+,,,,30621,158552,American maple - natural,0,fixed,,0,0,0,,1,1
+,,,,30621,158553,Birch - black pigment,0,fixed,,0,0,0,,1,1
+,,,,30621,158554,American walnut - light,0,fixed,,0,0,0,,1,1
+,,,,30621,158555,American white oak - natural,0,fixed,,0,0,0,,1,1
+,,,,30621,158556,Beech - natural,0,fixed,,0,0,0,,1,1
+,,,,30621,158557,American ash - natural,0,fixed,,0,0,0,,1,1
+,,,,30621,158558,American ash - light walnut stain,0,fixed,,0,0,0,,1,1
+test-phx,test-phx,ae | 01A Aeon 4: Cow Pony Hide Leather (premium),Select a hide:,30616,158514,"Black, brown, white hair",0,fixed,01A-ML008-Pony-A,0,0,0,,1,1
+,,,,30616,158515,Black and white hair,0,fixed,01A-ML018-Pony-B,0,0,0,,1,1
+,,,,30616,158516,Brown and white hair,0,fixed,01A-ML019-Pony-C,0,0,0,,1,1
