@@ -1,0 +1,19 @@
+{
+  "name": "raveinfosys/deleteorder",
+  "description": "Magento 2 module for deleting orders.",
+  "type": "magento2-module",
+  "version": "2.0.2",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Raveinfosys\\Deleteorder\\": ""
+    }
+  }
+}

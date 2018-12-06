@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="model_save_commit_after">
+        <observer name="mageworx_sphinxsearch_products_indexer" instance="MageWorx\SearchSuiteSphinx\Observer\ProductIndex"/>
+    </event>
+    <event name="catalog_product_attribute_update_before">
+        <observer name="mageworx_sphinxsearch_products_attributes_indexer" instance="MageWorx\SearchSuiteSphinx\Observer\ProductAttributesIndex"/>
+    </event>
+</config>

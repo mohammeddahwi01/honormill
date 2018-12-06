@@ -1,0 +1,38 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$basePath = $block->getBaseUrl();
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+?>
+	<div class="categories-container-inner">
+		<h3 class="section-title">Categories</h3>
+		<?php
+		$categories = $block->getCatCollection();
+
+		foreach ($categories as $category){
+			echo $block->catagorylistrecursiveHtml($category->getChildrenCategories());
+		}
+		?>
+	</div>
+
+
+<script type="text/javascript">
+	// require the require function
+	requirejs( [ 'require', 'jquery', 'https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js', 'https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js' ],
+	  function( require, $, Masonry, ImagesLoaded ) {
+	    // require jquery-bridget, it's included in masonry.pkgd.js
+	    require( [ 'jquery-bridget/jquery-bridget' ],
+	    function( jQueryBridget ) {
+	      	// make Masonry a jQuery plugin
+	      	jQueryBridget( 'masonry', Masonry, $ );
+	      	// jQueryBridget( 'imagesloaded', ImagesLoaded, $ );
+	      	// jQueryBridget( 'masonry', Masonry, $ );
+	      	// now you can use $().masonry()
+	     	// $('.categories-container-inner').masonry({
+	     	$('ul.cat').masonry({
+	      		columnWidth: 0,
+		        transitionDuration: 500
+	      	});
+	    }
+	  );
+	});
+</script>

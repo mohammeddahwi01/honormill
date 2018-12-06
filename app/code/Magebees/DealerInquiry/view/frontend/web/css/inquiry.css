@@ -1,0 +1,11 @@
+#inquiry-form { max-width:900px; }
+
+.field .date_time_picker { max-width:200px; }
+#clearfile { display:inline-block; }
+.captcha img { vertical-align:middle; margin-right:5px; }
+.captcha .input-text { max-width:200px; display:block; margin-top:2px; }
+
+.inquiry_link { float: right; }
+@media (max-width:767px) {
+ .inquiry_link { float:none; }
+}

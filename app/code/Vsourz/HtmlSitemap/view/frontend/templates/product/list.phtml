@@ -1,0 +1,44 @@
+<?php
+/**
+* Copyright © 2016 Magento. All rights reserved.
+* See COPYING.txt for license details.
+*/
+use Magento\Framework\App\Action\Action;
+// @codingStandardsIgnoreFile
+$basePath = $block->getBaseUrl();
+?>
+<?php
+/**
+* Product list template
+*
+*/
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+?>
+<?php
+$_productCollection = $block->getLoadedProductCollection();
+// if($sitemapHelper->isProductEnabled()) :
+?>
+
+<?php if (!$_productCollection->count()): ?>
+<div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
+<?php else: ?>
+<div class="products-container-inner">
+    <h4 class="section-title">Product List</h4>
+    <ul>
+        <?php foreach ($_productCollection as $_product): ?>
+            <li class="product-list-item">
+                <a href="<?php echo $_product->getProductUrl(); ?>" title="<?php echo $_product->getName(); ?>"><?php echo $_product->getName(); ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+
+    <div class="product-enable">
+        <span>For Our Category Sitemap, please</span>
+        <a href="<?php echo $basePath; ?>sitemap" title="Products Sitemap">Click Here</a>
+    </div>
+</div>
+
+<?php echo $block->getToolbarHtml() ?>
+
+<?php endif; ?>
+<?php //endif; // this is for checking isProductEnabled ?>

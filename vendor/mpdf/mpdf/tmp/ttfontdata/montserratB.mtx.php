@@ -1,0 +1,37 @@
+<?php
+$name='Montserrat-Bold';
+$type='TTF';
+$desc=array (
+  'CapHeight' => 701.0,
+  'XHeight' => 541.0,
+  'FontBBox' => '[-521 -452 1528 1157]',
+  'Flags' => 262148,
+  'Ascent' => 968.0,
+  'Descent' => -251.0,
+  'Leading' => 0.0,
+  'ItalicAngle' => 0.0,
+  'StemV' => 165.0,
+  'MissingWidth' => 587.0,
+);
+$unitsPerEm=1000;
+$up=-75;
+$ut=50;
+$strp=324;
+$strs=50;
+$ttffile='/var/www/html/pub/honormill/app/code/PluginCompany/ProductPdf/view/base/googlefonts//montserrat/Montserrat-Bold.ttf';
+$TTCfontID='0';
+$originalsize=191648;
+$sip=false;
+$smp=false;
+$BMPselected=false;
+$fontkey='montserratB';
+$panose=' 0 0 0 0 8 0 0 0 0 0 0 0';
+$haskerninfo=false;
+$haskernGPOS=false;
+$hassmallcapsGSUB=false;
+$fontmetrics='win';
+// TypoAscender/TypoDescender/TypoLineGap = 968, -251, 0
+// usWinAscent/usWinDescent = 1177, -496
+// hhea Ascent/Descent/LineGap = 968, -251, 0
+$useOTL=0x0000;
+$rtlPUAstr='';

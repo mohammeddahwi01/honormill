@@ -1,0 +1,23 @@
+{
+    "name": "mageworx/module-optiondependency",
+    "description": "Create options dependency.",
+    "require": {
+        "magento/framework"         : ">=100.1.0 <102",
+        "magento/module-catalog"    : ">=101.0.0 <103",
+        "mageworx/module-optionbase": ">=2.7.1"
+    },
+    "type": "magento2-module",
+    "version": "2.2.4",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MageWorx\\OptionDependency\\": ""
+        }
+    }
+}

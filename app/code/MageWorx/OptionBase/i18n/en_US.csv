@@ -1,0 +1,9 @@
+"Invalid Form Key. Please try to set ""max_input_vars"" directive to ""10000""","Invalid Form Key. Please try to set ""max_input_vars"" directive to ""10000"""
+"Expected \MageWorx\OptionBase\Model\InstallSchemaInterface, got: %1","Expected \MageWorx\OptionBase\Model\InstallSchemaInterface, got: %1"
+Name,Name
+Price,Price
+"Something went wrong while saving group's APO attributes","Something went wrong while saving group's APO attributes"
+"Something went wrong while saving product's APO attributes","Something went wrong while saving product's APO attributes"
+"The product has required options.","The product has required options."
+"Sort Order","Sort Order"
+Add,Add

@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <inquiry>
+			<settings>
+				<enable>1</enable>
+				<url_key>inquiry</url_key>
+				<enable_link>1</enable_link>
+				<link_label>Dealer Inquiry</link_label>
+				<heading>Dealer Inquiry</heading>
+				<meta_title>Dealer Inquiry</meta_title>
+				<meta_description>Dealer Inquiry registration form</meta_description>
+				<meta_keywords>dealer,wholesale,inquiry,enquiry</meta_keywords>
+				<description>Write description here and it will display after Title.</description>
+				<submit_label>Submit</submit_label>
+				<success_message>Thanks for contacting us. We\'ll respond to you very soon.</success_message>
+				<customer_group>1</customer_group>
+            </settings>
+			<admin_email>
+				<subject>New Dealer Inquiry from dealer</subject>
+				<email_template>inquiry_admin_email_email_template</email_template>
+				<send_to>default</send_to>
+				<owner_email>example@gmail.com</owner_email>
+			</admin_email>
+			<customer_email>
+				<subject>Thank you for contacting Us.</subject>
+				<email_template>inquiry_customer_email_email_template</email_template>
+            </customer_email>
+			<create_account>
+				<subject>Registration Details of Dealer</subject>
+				<email_template>inquiry_create_account_email_template</email_template>
+			</create_account>
+			<change_label>
+				<first_name>First Name</first_name>
+				<last_name>Last Name</last_name>
+				<company_name>Company Name</company_name>
+				<vat_number>Tax/VAT Number</vat_number>
+				<address>Address</address>
+				<city>City</city>
+				<state>State / Province</state>
+				<country>Country</country>
+				<zip>ZIP / Postal Code</zip>
+				<contact_number>Contact Number</contact_number>
+				<email>Email</email>
+				<website>Website</website>
+				<description>Business Description</description>
+				<date_time>Date Time</date_time>
+				<upload_file>Upload Files</upload_file>
+				<extra_one>Extra Field 1</extra_one>
+				<extra_two>Extra Filed 2</extra_two>
+				<extra_three>Extra Field 3</extra_three>
+				<captcha>Type the below letters</captcha>
+			</change_label>
+			<label_hide>
+				<vat_number>1</vat_number>
+				<address>1</address>
+				<website>1</website>
+				<captcha>1</captcha>
+				<file_ext>jpg,jpeg,png,doc,docx,pdf,txt</file_ext>
+			</label_hide>
+        </inquiry>    
+    </default>
+</config>

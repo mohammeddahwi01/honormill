@@ -1,0 +1,71 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+
+<?php /* @var $block \Magento\Catalog\Block\Product\View\Options\Type\Select */ ?>
+<?php
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); // Instance of object manager
+$resource = $objectManager->get('Magento\Framework\App\ResourceConnection');
+$connection = $resource->getConnection();
+$tableName = $resource->getTableName('catalog_product_option_type_value');
+$sql = "Select * FROM " . $tableName . " WHERE is_stocktab=1 AND option_id=" . $_option->getId();
+$result = $connection->fetchAll($sql);
+$_isStocktab = (count($result)) ? 'stocktab' : '';
+$sql = "Select * FROM " . $tableName . " WHERE is_customtab=1 AND option_id=" . $_option->getId();
+$result = $connection->fetchAll($sql);
+$_isCustomtab = (count($result)) ? 'customtab' : '';
+
+$ownMaterialOptionExist = '';
+$_lastClass = '';
+$tableName = $resource->getTableName('mageworx_optiontemplates_group_option');
+if ($_option->getGroupOptionId()) {
+    $sql = "Select group_id FROM " . $tableName . " WHERE option_id=" . $_option->getGroupOptionId();
+    $result = $connection->fetchAll($sql);
+    $ownMaterialOptionExist = (is_array($result) && count($result) && isset($result[0]['group_id']) && intval($result[0]['group_id'])==76 && $_option->getData('title')=='I have my own material/leather (COM/COL)') ? 'ownMaterialOptionExist' : '';
+    $_lastClass = (is_array($result) && count($result) && isset($result[0]['group_id']) && intval($result[0]['group_id'])==76) ? 'outside' : '';
+}
+//IF CHECKBOX CONTROLS ADDED BUT TEMPLATE/GROUP NOT SELECTED
+$checkboxControlExist = ($_option->getType() == \Magento\Catalog\Api\Data\ProductCustomOptionInterface::OPTION_TYPE_CHECKBOX) ? true : false;
+$_lastClass = (!$_lastClass && $checkboxControlExist) ? 'outside' : $_lastClass;
+$checkboxControlExistWithOwnMaterialTitle = ($_option->getTitle()=='I have my own material/leather (COM/COL)') ? true : false;
+$ownMaterialOptionExist = (!$ownMaterialOptionExist && $checkboxControlExistWithOwnMaterialTitle) ? 'ownMaterialOptionExist' : $ownMaterialOptionExist;
+$descTxt = '';
+?>
+<div class="<?=$_isStocktab?> <?=$_isCustomtab?> <?=$_lastClass?> <?=$ownMaterialOptionExist?> field<?= /* @escapeNotVerified */ $class ?>">
+    <?php
+    $cls = ''; 
+    if ($_option->getData('title') == 'I have my own material/leather (COM/COL)' || $_option->getData('title') == 'Need It Faster? Rush Delivery Available.') {
+        $cls = 'style="position:relative;"';
+    }
+    ?>
+    <label class="label" for="select_<?= /* @escapeNotVerified */ $_option->getId() ?>" <?php echo $cls; ?>>
+        <span><?= $block->escapeHtml($_option->getTitle()) ?></span>
+        <?php if($_option->getDescription()): ?>
+            <p class=""><?= $block->escapeHtml($_option->getDescription()) ?></p>
+            <?php $descTxt = $block->escapeHtml($_option->getDescription()); ?>
+        <?php endif; ?>
+        <?php 
+        if($_option->getData('title') == 'I have my own material/leather (COM/COL)') {
+            echo "<a href='javascript:void(0)' id='i-have-my-own-material-leather' class='show-tooltip' title='".$descTxt."'><span>&nbsp;</span></a>";
+        } else if($_option->getData('title') == 'Need It Faster? Rush Delivery Available.') { 
+            echo "<a href='javascript:void(0)' id='need-it-faster-rush-delivery' class='show-tooltip' title='".$descTxt."'><span>&nbsp;</span></a>";
+        } ?>
+    </label>
+    <div class="control">
+        <?= $block->getValuesHtml() ?>
+        <?php if ($_option->getIsRequire()): ?>
+            <?php if ($_option->getType() == \Magento\Catalog\Api\Data\ProductCustomOptionInterface::OPTION_TYPE_RADIO || $_option->getType() == \Magento\Catalog\Api\Data\ProductCustomOptionInterface::OPTION_TYPE_CHECKBOX): ?>
+                <span id="options-<?= /* @escapeNotVerified */ $_option->getId() ?>-container"></span>
+            <?php endif; ?>
+        <?php endif;?>
+    </div>
+</div>

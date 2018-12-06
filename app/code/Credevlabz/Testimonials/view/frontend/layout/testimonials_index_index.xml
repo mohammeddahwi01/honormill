@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package Credevlabz/Testimonials
+ * @author Aman Srivastava <http://amansrivastava.in>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Cms\Block\Block" name="testimonial-top-block">
+			    <arguments>
+			        <argument name="block_id" xsi:type="string">testimonial-top-block</argument>
+			    </arguments>
+			</block>
+            <block class="Credevlabz\Testimonials\Block\TestimonialsList" name="testimonials.list" template="Credevlabz_Testimonials::list.phtml" />
+            <block class="Magento\Cms\Block\Block" name="testimonial-bottom-block">
+			    <arguments>
+			        <argument name="block_id" xsi:type="string">testimonial-bottom-block</argument>
+			    </arguments>
+			</block>
+        </referenceContainer>
+    </body>
+</page>

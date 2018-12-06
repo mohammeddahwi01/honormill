@@ -1,0 +1,35 @@
+<?php
+/**
+* Copyright © 2016 Magento. All rights reserved.
+* See COPYING.txt for license details.
+*/
+use Magento\Framework\App\Action\Action;
+
+// @codingStandardsIgnoreFile
+$basePath = $block->getBaseUrl();
+
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+?>
+<?php
+
+$pcountAllCollection = $block->getProductsAllCollection();
+$pcount = count($pcountAllCollection);
+?>
+<div class="products-container-inner">
+    <h3 class="section-title">Product List <span class="h5">Showing <span class="pcount-all"><?php echo $pcount; ?></span> Products</span></h3>
+    <?php
+        // put '#' as argument for the product name not starts with any alphabets
+        $_productCollectiontemp = $block->getProductsCollection('#');
+        echo $block->collectionToHtml($_productCollectiontemp,'#');
+
+        for ($char = 'A'; $char <= 'Z'; $char++) {
+            $_productCollection = $block->getProductsCollection($char);
+            echo $block->collectionToHtml($_productCollection,$char);
+            if ($char == 'Z'){
+                // this is  to break the loop after z.
+                // if you will not break then it will go for matching 2,3,.. character(like aa,ab,ac) also.
+                break;
+            }
+        }
+    ?>
+</div>

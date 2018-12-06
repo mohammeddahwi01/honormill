@@ -1,0 +1,100 @@
+<script>
+require(['jquery'],function($){
+    $(document).ready(function(){
+        $('body').on('click', '.admin__field-customoder input[type="checkbox"]', function(){
+            var checkedId = $(this).attr('id');
+            if($(this).is(':checked')) {
+                $(this).closest('fieldset.admin__fieldset').find('[data-index="is_customtab"]').each(function(){
+                    if($(this).find("[type='checkbox']").prop('value') == 0) {
+                        $(this).find(".admin__actions-switch-text").trigger('click');
+                    }
+                });
+            } else {
+                $(this).closest('fieldset.admin__fieldset').find('[data-index="is_customtab"]').each(function(){
+                    if($(this).find("[type='checkbox']").prop('value') == 1) {
+                        $(this).find(".admin__actions-switch-text").trigger('click');
+                    }
+                });
+            }
+            document.getElementById(checkedId).focus();
+        });
+        $('body').on('click', '.admin__field-fastship input[type="checkbox"]', function(){
+            var checkedId = $(this).attr('id');
+            if($(this).is(':checked')) {
+                $(this).closest('fieldset.admin__fieldset').find('[data-index="is_stocktab"]').each(function(){
+                    if($(this).find("[type='checkbox']").prop('value') == 0) {
+                        $(this).find(".admin__actions-switch-text").trigger('click');
+                    }
+                });
+            } else {
+                $(this).closest('fieldset.admin__fieldset').find('[data-index="is_stocktab"]').each(function(){
+                    if($(this).find("[type='checkbox']").prop('value') == 1) {
+                        $(this).find(".admin__actions-switch-text").trigger('click');
+                    }
+                });
+            }
+            document.getElementById(checkedId).focus();
+        });
+
+        $('body').on('change', '[data-index="is_stocktab"] [type="checkbox"]', function(){
+            var allOptCount = $(this).closest('fieldset.admin__fieldset').find('[data-index="is_stocktab"] [type="checkbox"]').size();
+            var matches = 0;
+            $(this).closest('fieldset.admin__fieldset').find('[data-index="is_stocktab"] [type="checkbox"]').each(function() {
+                var curnVal = $(this).prop('value');
+                if (curnVal == '1') {
+                    matches++;
+                }
+            });
+            if(allOptCount == matches) {
+                var fashShipCheck = $(this).closest('fieldset.admin__fieldset').find('.admin__field-fastship input[type="checkbox"]');
+                if(!fashShipCheck.is(':checked')) {
+                    fashShipCheck.prop('value', '1');
+                    fashShipCheck.prop('checked', true);
+                    fashShipCheck.trigger("change");
+                }
+            } else {
+                var fashShipCheck = $(this).closest('fieldset.admin__fieldset').find('.admin__field-fastship input[type="checkbox"]');
+                if(fashShipCheck.is(':checked')) {
+                    fashShipCheck.prop('value', '0');
+                    fashShipCheck.prop('checked', false);
+                    fashShipCheck.trigger("change");
+                }
+            }
+        });
+
+        $('body').on('change', '[data-index="is_customtab"] [type="checkbox"]', function(){
+            var allOptCount = $(this).closest('fieldset.admin__fieldset').find('[data-index="is_customtab"] [type="checkbox"]').size();
+            var matches = 0;
+            $(this).closest('fieldset.admin__fieldset').find('[data-index="is_customtab"] [type="checkbox"]').each(function() {
+                var curnVal = $(this).prop('value');
+                if (curnVal == '1') {
+                    matches++;
+                }
+            });
+            if(allOptCount == matches) {
+                var fashShipCheck = $(this).closest('fieldset.admin__fieldset').find('.admin__field-customoder input[type="checkbox"]');
+                if(!fashShipCheck.is(':checked')) {
+                    fashShipCheck.prop('value', '1');
+                    fashShipCheck.prop('checked', true);
+                    fashShipCheck.trigger("change");
+                }
+            } else {
+                var fashShipCheck = $(this).closest('fieldset.admin__fieldset').find('.admin__field-customoder input[type="checkbox"]');
+                if(fashShipCheck.is(':checked')) {
+                    fashShipCheck.prop('value', '0');
+                    fashShipCheck.prop('checked', false);
+                    fashShipCheck.trigger("change");
+                }
+            }
+        });
+    })
+});
+</script>
+<style type="text/css">
+.admin__field-customoder label.admin__field-label, .admin__field-fastship label.admin__field-label {
+    text-align: left;
+}
+.admin__field-customoder .admin__field-tooltip, .admin__field-fastship .admin__field-tooltip {
+    display: none;
+}
+</style>

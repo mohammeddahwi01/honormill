@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product\Url">
+        <plugin name="scommerce_catalogurl" type="Scommerce\CatalogUrl\Plugin\Product\Url" sortOrder="10"/>
+    </type>
+    <type name="Magento\Catalog\Controller\Product\View">
+        <plugin name="scommerce_catalog_product_view" type="Scommerce\CatalogUrl\Plugin\Product\ViewPlugin" sortOrder="10"/>
+    </type>
+</config>

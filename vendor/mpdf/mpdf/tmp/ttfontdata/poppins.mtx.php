@@ -1,0 +1,37 @@
+<?php
+$name='Poppins-Regular';
+$type='TTF';
+$desc=array (
+  'CapHeight' => 693.0,
+  'XHeight' => 549.0,
+  'FontBBox' => '[-535 -439 2606 1076]',
+  'Flags' => 4,
+  'Ascent' => 1050.0,
+  'Descent' => -350.0,
+  'Leading' => 100.0,
+  'ItalicAngle' => 0.0,
+  'StemV' => 87.0,
+  'MissingWidth' => 500.0,
+);
+$unitsPerEm=1000;
+$up=-75;
+$ut=50;
+$strp=329;
+$strs=50;
+$ttffile='/var/www/html/pub/honormill/app/code/PluginCompany/ProductPdf/view/base/googlefonts//poppins/Poppins-Regular.ttf';
+$TTCfontID='0';
+$originalsize=156480;
+$sip=false;
+$smp=false;
+$BMPselected=false;
+$fontkey='poppins';
+$panose=' 0 0 0 0 5 0 0 0 0 0 0 0';
+$haskerninfo=false;
+$haskernGPOS=false;
+$hassmallcapsGSUB=false;
+$fontmetrics='win';
+// TypoAscender/TypoDescender/TypoLineGap = 1050, -350, 100
+// usWinAscent/usWinDescent = 1100, -400
+// hhea Ascent/Descent/LineGap = 1050, -350, 100
+$useOTL=0x0000;
+$rtlPUAstr='';

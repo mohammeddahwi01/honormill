@@ -1,0 +1,207 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View
+ */
+?>
+<?php $_helper = $this->helper('Magento\Catalog\Helper\Output');
+$mageWorxHelper = $this->helper('MageWorx\OptionTemplates\Helper\Data');
+?>
+<?php $_product = $block->getProduct(); 
+$sizeOptIdArr = array();
+$colorOptIdArr = array();
+$fabricOptIdArr = array();
+foreach ($_product->getOptions() as $options) {
+   $optionData = $options->getValues();
+    foreach ($optionData as $data) {
+        // echo "<pre>";
+        // print_r($data->getData());
+        // echo "</pre>";
+        if ($data->getOptSize() != '') {
+            $sizeOptIdArr[] = $data->getOptSize();
+        }
+        if ($data->getOptColor() != '') {
+            $colorOptIdArr[] = $data->getOptColor();
+        }
+        if ($data->getOptFabric() != '') {
+            $fabricOptIdArr[] = $data->getOptFabric();
+        }
+    }
+}
+/*echo "<pre>";
+echo "size<br/>";
+print_r($sizeOptIdArr);
+echo "<br/>color<br/>";
+print_r($colorOptIdArr);
+echo "<br/>fabric<br/>";
+print_r($fabricOptIdArr);
+echo "</pre>";*/
+$sizeOpt = $mageWorxHelper->getOptionFormattedArray('size', $sizeOptIdArr);
+$colorOpt = $mageWorxHelper->getOptionFormattedArray('color', $colorOptIdArr);
+$fabricOpt = $mageWorxHelper->getOptionFormattedArray('fabric', $fabricOptIdArr);
+/*echo "<pre>";
+echo "size<br/>";
+print_r($sizeOpt);
+echo "<br/>color<br/>";
+print_r($colorOpt);
+echo "<br/>fabric<br/>";
+print_r($fabricOpt);
+echo "</pre>";
+exit();*/
+?>
+
+<div class="product-add-form">
+    <form data-product-sku="<?= $block->escapeHtml($_product->getSku()) ?>"
+          action="<?= /* @NoEscape */ $block->getSubmitUrl($_product) ?>" method="post"
+          id="product_addtocart_form"<?php if ($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+        <input type="hidden" name="product" value="<?= /* @escapeNotVerified */ $_product->getId() ?>" />
+        <input type="hidden" name="selected_configurable_option" value="" />
+        <input type="hidden" name="related_product" id="related-products-field" value="" />
+        <?= $block->getBlockHtml('formkey') ?>
+        <?= $block->getChildHtml('form_top') ?>
+        <div class="attribute-filter-container">
+            <input type="hidden" name="filterSelection" id="filterSelection">
+            <?php if (count($sizeOpt) > 0) { ?>
+                <div class="attribute-filter filter-size">
+                    <div class="filter-name">Size</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($sizeOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if (count($colorOpt) > 0) { ?>
+                <div class="attribute-filter filter-color">
+                    <div class="filter-name">Color</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($colorOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if (count($fabricOpt) > 0) { ?>
+                <div class="attribute-filter filter-fabric">
+                    <div class="filter-name">Fabric</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($fabricOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="selected-filters"><span class="clear-all" style="display: none;">Clear All<i class="fa fa-close"></i></span></div>
+            <div class="no-record-found" style="display: none;">
+                <p>We're sorry, but your selection couldn't find any results. Here are a few tips that might help:</p>
+                <ul>
+                    <li>Remove last selected item.</li>
+                    <li>Clear all items.</li>
+                    <li>Clear any items selected.</li>
+                </ul>
+                <p>If you need further assistance please call 212-560-5977 or click to chat</p>
+            </div>
+        </div>
+        <?php if (!$block->hasOptions()):?>
+            <?= $block->getChildHtml('product_info_form_content') ?>
+        <?php else:?>
+            <?php if ($_product->isSaleable() && $block->getOptionsContainer() == 'container1'):?>
+                <?= $block->getChildChildHtml('options_container') ?>
+            <?php endif;?>
+        <?php endif; ?>
+
+        <?php if ($_product->isSaleable() && $block->hasOptions() && $block->getOptionsContainer() == 'container2'):?>
+            <?= $block->getChildChildHtml('options_container') ?>
+        <?php endif;?>
+        <?= $block->getChildHtml('form_bottom') ?>
+    </form>
+</div>
+<script>
+    require([
+        'jquery',
+        'priceBox'
+    ], function($){
+        var dataPriceBoxSelector = '[data-role=priceBox]',
+            dataProductIdSelector = '[data-product-id=<?= $block->escapeHtml($_product->getId()) ?>]',
+            priceBoxes = $(dataPriceBoxSelector + dataProductIdSelector);
+
+        priceBoxes = priceBoxes.filter(function(index, elem){
+            return !$(elem).find('.price-from').length;
+        });
+
+        priceBoxes.priceBox({'priceConfig': <?= /* @escapeNotVerified */ $block->getJsonConfig() ?>});
+
+        $('body').on('input', '#filterSelection', function(e){
+            $('.mageworx-swatch-option, .product-options-wrapper .field').hide();
+            $('.product-options-wrapper .field').addClass('hide-field');
+            var txt = $(this).val();
+            $('.opt-filter'+txt).closest('.field').removeClass('hide-field').show();
+            $('.opt-filter'+txt).closest('.mageworx-swatch-option').show();
+            if ($('.opt-filter'+txt).length > 0) {
+                $('.no-record-found').hide();
+            } else {
+                $('.no-record-found').show();
+            }
+        });
+
+        $('body').on('click', '.filter-val', function(){
+            var elem = $(this);
+            elem.toggleClass('act-filter');
+            var selectedHtml = '';            
+            if (elem.hasClass('act-filter')) {
+                selectedHtml += '<span class="'+elem.data('val')+'">'+elem.children().text()+'<i class="fa fa-close"></i></span>';
+                $('.selected-filters .clear-all').before(selectedHtml);
+            } else {
+                $('.'+elem.data('val')).remove();
+            }
+            var filterText = '';
+            $('.filter-val.act-filter').each(function(index, value){
+                var dataVal = $(this).data('val');
+                /*if (index == 0) {
+                    filterText += '.opt-filter:contains("'+dataVal+'")';
+                } else {
+                    filterText += ', .opt-filter:contains("'+dataVal+'")';
+                }*/
+                filterText += ':contains("'+dataVal+'")';
+            });
+            $('#filterSelection').val(filterText).trigger('input');
+            if ($('.selected-filters span:not(.clear-all)').length <= 0) {
+                $('.selected-filters span.clear-all').hide();
+            } else {
+                $('.selected-filters span.clear-all').show();
+            }
+        });
+
+        $('body').on('click', '.selected-filters span:not(.clear-all)', function(){
+            var curClass = $(this).attr('class');
+            $(this).remove();
+            $('[data-val="'+curClass+'"]').trigger('click'); 
+        });
+
+        $('body').on('click', '.selected-filters span.clear-all', function(){
+            $('.filter-val.act-filter').trigger('click');
+        });
+    });
+</script>

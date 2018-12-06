@@ -1,0 +1,21 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$_registry = $objectManager->get('\Magento\Framework\Registry');
+$_product = $_registry->registry('current_product');
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="' . __('* Required Fields') . '"';
+}
+$multi_select_option = ($_product->getData('multi_select_option')) ? 'multi-select-option' : '';
+?>
+<div class="product-options-wrapper" id="product-options-wrapper"<?= /* @escapeNotVerified */ $required ?>>
+    <div class="fieldset <?php echo $multi_select_option; ?>" tabindex="0">
+        <?= $block->getChildHtml('', true) ?>
+    </div>
+</div>

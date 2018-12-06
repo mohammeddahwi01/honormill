@@ -1,0 +1,6 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Indexer/etc/indexer.xsd">
+    <indexer id="mageworx_sphinxsearch_products" view_id="mageworx_sphinxsearch_products" class="MageWorx\SearchSuiteSphinx\Model\Indexer\Product">
+        <title translate="true">Products for Sphinx Search</title>
+        <description translate="true">Products index used by Sphinx Search</description>
+    </indexer>
+</config>

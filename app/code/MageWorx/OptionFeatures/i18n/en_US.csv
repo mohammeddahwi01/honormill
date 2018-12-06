@@ -1,0 +1,56 @@
+"Add New Images","Add New Images"
+"Images (.gif, .jpg, .png)","Images (.gif, .jpg, .png)"
+"Save & Close","Save & Close"
+"Plain Text Beside Option","Plain Text Beside Option"
+Tooltip,Tooltip
+No,No
+"(Incl. Tax","(Incl. Tax"
+"Some of the selected item options are not currently available.","Some of the selected item options are not currently available."
+"Qty: ","Qty: "
+"Is Default","Is Default"
+Cost,Cost
+Weight,Weight
+Description,Description
+"Qty Input","Qty Input"
+"One Time","One Time"
+"Due to Magento calculations, the one-time option price is divided by the added quantity to get the final price.","Due to Magento calculations, the one-time option price is divided by the added quantity to get the final price."
+"Note: the final price may possibly differ by 1-2 cents.","Note: the final price may possibly differ by 1-2 cents."
+"Absolute Cost","Absolute Cost"
+"Absolute Weight","Absolute Weight"
+"Absolute Price","Absolute Price"
+"Manage Images","Manage Images"
+Images,Images
+"Option Gallery Display Mode","Option Gallery Display Mode"
+Disabled,Disabled
+"Beside Option","Beside Option"
+"Once Selected","Once Selected"
+"Image Mode","Image Mode"
+Replace,Replace
+"Browse to find or drag image here","Browse to find or drag image here"
+"Delete image","Delete image"
+Hidden,Hidden
+Text,Text
+Role,Role
+"Image Size","Image Size"
+{size},{size}
+"Image Resolution","Image Resolution"
+"{width}^{height} px","{width}^{height} px"
+"Hide from Option Gallery","Hide from Option Gallery"
+"Something goes wrong","Something goes wrong"
+Option,Option
+"Advanced Product Options","Advanced Product Options"
+"Option Features","Option Features"
+"Enable Custom Options Weight","Enable Custom Options Weight"
+"Enable Custom Options Absolute Weight","Enable Custom Options Absolute Weight"
+"Enable Custom Options Cost","Enable Custom Options Cost"
+"Enable Custom Options Absolute Cost","Enable Custom Options Absolute Cost"
+"Enable Custom Options Absolute Price","Enable Custom Options Absolute Price"
+"Enable One Time Custom Options","Enable One Time Custom Options"
+"Enable Custom Options Quantity Input","Enable Custom Options Quantity Input"
+"Enable Option's Value Description","Enable Option's Value Description"
+"Enable Option Description","Enable Option Description"
+"Enable Is Default","Enable Is Default"
+"Option Gallery Thumbnail Image Size","Option Gallery Thumbnail Image Size"
+"Swatch Size","Swatch Size"
+"Swatch Tooltip Image Size","Swatch Tooltip Image Size"
+"Images Information","Images Information"

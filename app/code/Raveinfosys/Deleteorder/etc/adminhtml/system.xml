@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+		<tab id="raveinfosys" translate="label" sortOrder="10">
+            <label>RaveInfosys</label>
+        </tab>
+		<section id="deleteorder" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>Delete Order Configuration</label>
+			<tab>raveinfosys</tab>
+			<resource>Raveinfosys_Deleteorder::config_deleteorder</resource>
+			<group id="general" translate="label" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Select Order Status</label>
+				<field id="order_status" translate="label" type="multiselect" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Order Status</label>
+					<source_model>Raveinfosys\Deleteorder\Model\Config\Source\Order\Status</source_model>
+					<comment>Only selected order can be deleted.</comment>
+				</field>
+			</group>
+		</section>        
+    </system>
+</config>

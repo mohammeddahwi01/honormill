@@ -1,0 +1,61 @@
+Generate,Generate
+Run,Run
+Stop,Stop
+Check,Check
+"Reindex All","Reindex All"
+"Config file successfully created in %1","Config file successfully created in %1"
+"You should move config file to Sphinx server manually.","You should move config file to Sphinx server manually."
+"Template for config file %1 doesn't exist","Template for config file %1 doesn't exist"
+"Config file does't exist. Please check the settings below and generate config file.","Config file does't exist. Please check the settings below and generate config file."
+"Sphinx Search is running.","Sphinx Search is running."
+"Can't create directory for indexes. Permission denied.","Can't create directory for indexes. Permission denied."
+"Sphinx search reindex ran successfully.","Sphinx search reindex ran successfully."
+"We can't rebuild the index for an undefined product.","We can't rebuild the index for an undefined product."
+"Sphinx search ran successfully.","Sphinx search ran successfully."
+"You should run Sphinx on remote server manually.","You should run Sphinx on remote server manually."
+"Sphinx search stopped successfully.","Sphinx search stopped successfully."
+"Sphinx search is running.","Sphinx search is running."
+"Run Sphinx search reindex to resolve this issue.","Run Sphinx search reindex to resolve this issue."
+"Run Sphinx search to resolve this issue.","Run Sphinx search to resolve this issue."
+"Sphinx Search may already be stopped.","Sphinx Search may already be stopped."
+"Running ""exec"" function is not allowed on this server. 
+                Change the settings or run this command manually: %1","Running ""exec"" function is not allowed on this server. 
+                Change the settings or run this command manually: %1"
+"Sphinx Delta Index is too big. Products can be saved slowly.
+            Click ""Reindex All"" button in Sphinx Search settings to resolve this issue.","Sphinx Delta Index is too big. Products can be saved slowly.
+            Click ""Reindex All"" button in Sphinx Search settings to resolve this issue."
+SPH_MATCH_ALL,SPH_MATCH_ALL
+SPH_MATCH_ANY,SPH_MATCH_ANY
+SPH_MATCH_PHRASE,SPH_MATCH_PHRASE
+SPH_MATCH_EXTENDED,SPH_MATCH_EXTENDED
+SPH_MATCH_FULLSCAN,SPH_MATCH_FULLSCAN
+SPH_RANK_PROXIMITY_BM25,SPH_RANK_PROXIMITY_BM25
+SPH_RANK_BM25,SPH_RANK_BM25
+SPH_RANK_NONE,SPH_RANK_NONE
+SPH_RANK_WORDCOUNT,SPH_RANK_WORDCOUNT
+SPH_RANK_PROXIMITY,SPH_RANK_PROXIMITY
+SPH_RANK_MATCHANY,SPH_RANK_MATCHANY
+SPH_RANK_FIELDMASK,SPH_RANK_FIELDMASK
+SPH_RANK_SPH04,SPH_RANK_SPH04
+"Search Suite","Search Suite"
+"Sphinx Configuration","Sphinx Configuration"
+"Sphinx Search Actions","Sphinx Search Actions"
+"Sphinx Host","Sphinx Host"
+"Default host: 127.0.0.1","Default host: 127.0.0.1"
+"Sphinx Port","Sphinx Port"
+"Default port: 9312","Default port: 9312"
+"Sql Port","Sql Port"
+"Default sql port: 3306","Default sql port: 3306"
+"Path to Index","Path to Index"
+"Default path var/mageworx_sphinxsearch/","Default path var/mageworx_sphinxsearch/"
+"Path to Search Logs","Path to Search Logs"
+"Path to Sphinx Logs","Path to Sphinx Logs"
+"Generate Sphinx Config","Generate Sphinx Config"
+"Save the settings prior to generating a file.","Save the settings prior to generating a file."
+"Connection Timeout","Connection Timeout"
+"Max Product Number In Delta Index","Max Product Number In Delta Index"
+"This setting used only in case Sphinx Reindex set to 'Update on save' and affects the speed of product saving. <br> Recommended to set this value about 10% of all products count.","This setting used only in case Sphinx Reindex set to 'Update on save' and affects the speed of product saving. <br> Recommended to set this value about 10% of all products count."
+"Search Results Ranker","Search Results Ranker"
+"Matching Mode","Matching Mode"
+"Products for Sphinx Search","Products for Sphinx Search"
+"Products index used by Sphinx Search","Products index used by Sphinx Search"

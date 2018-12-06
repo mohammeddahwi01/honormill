@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Sitemap</title>
+        <css src="Vsourz_HtmlSitemap/css/htmlsitemap.css" media="all"/>
+    </head>
+    <body>
+            <referenceContainer name="main">
+                <container name="htmlsitemap-container" label="HtmlSitemap Container" htmlTag="div" htmlClass="htmlsitemap-container outer">
+                    <container name="top-sitemap-container" htmlTag="div" htmlClass="top-sitemap-container">
+                        <container name="category-container" htmlTag="div" htmlClass="categories-container sitemap-section">
+                            <block class="Vsourz\HtmlSitemap\Block\CategoryList" name="categoriesList" template="categorieslist.phtml" ifconfig="htmlsitemap/general/categories_enabled" />
+                        </container>
+
+                        <container name="cmspagelist-container" htmlTag="div" htmlClass="cmspages-container sitemap-section">
+                            <block class="Vsourz\HtmlSitemap\Block\CmsPageList" name="cmsPageList" template="cmspagelist.phtml" ifconfig="htmlsitemap/general/cms_enabled" />
+                        </container>
+
+                    </container>
+
+                    <container name="middle-sitemap-container" htmlTag="div" htmlClass="middle-sitemap-container">
+                        <container name="additioanallinks-container" htmlTag="div" htmlClass="cmspages-container sitemap-section">
+                            <block class="Vsourz\HtmlSitemap\Block\CmsPageList" name="additioanalLinks" template="additioanallinks.phtml" ifconfig="htmlsitemap/general/custom_links" />
+                        </container>
+                    </container>
+
+                    <container name="bottom-sitemap-container" htmlTag="div" htmlClass="bottom-sitemap-container">
+                        <container name="productlist-container" htmlTag="div" htmlClass="products-container sitemap-section">
+                            <block class="Vsourz\HtmlSitemap\Block\ProductsList" name="sitemapProductsList" template="Vsourz_HtmlSitemap::product/list-custom.phtml" ifconfig="htmlsitemap/general/product_enabled">
+                                <action method="setToolbarBlockName">
+                                    <argument name="name" xsi:type="string">product_list_toolbar_sitemap</argument>
+                                </action>
+                            </block>
+                        </container>
+                    </container>
+
+                </container>
+
+
+
+            </referenceContainer>
+
+    </body>
+</page>

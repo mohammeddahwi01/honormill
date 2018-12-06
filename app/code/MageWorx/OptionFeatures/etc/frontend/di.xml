@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="Magento\Wishlist\Model\Item">
+        <plugin name="ModifyWishlistItemPrice" type="MageWorx\OptionFeatures\Plugin\ModifyWishlistItemPrice" sortOrder="10" disabled="false"/>
+    </type>
+</config>

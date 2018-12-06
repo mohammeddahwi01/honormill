@@ -1,0 +1,112 @@
+<!--@subject {{var subject}}@-->
+<p class="greeting">Hello {{var owner}},</p>
+<p>Mr/Ms. {{var data.name}} have filled dealer inquiry form and details are below.</p>
+<br/>
+<table>
+	<tr>
+		<td>{{trans "%first_name:" first_name=$label.first_name}}</td>
+        <td>{{var data.first_name}}</td>
+    </tr>
+    {{depend data.last_name}}
+	<tr>
+        <td>{{trans "%last_name:" last_name=$label.last_name}}</td>
+        <td>{{var data.last_name}}</td>
+    </tr>
+	{{/depend}}
+	<tr>
+        <td>{{trans "%email:" email=$label.email}}</td>
+        <td>{{var data.email}}</td>
+    </tr>
+	<tr>
+        <td>{{trans "%company_name:" company_name=$label.company_name}}</td>
+        <td>{{var data.company}}</td>
+    </tr>
+	{{depend data.taxvat}}
+	<tr>
+        <td>{{trans "%vat_number:" vat_number=$label.vat_number}}</td>
+        <td>{{var data.taxvat}}</td>
+    </tr>
+	{{/depend}}
+	{{depend data.address}}
+	<tr>
+        <td>{{trans "%address:" address=$label.address}}</td>
+        <td>{{var data.address}}</td>
+    </tr>
+	{{/depend}}
+	{{depend data.city}}
+	<tr>
+        <td>{{trans "%city:" city=$label.city}}</td>
+        <td>{{var data.city}}</td>
+    </tr>
+	{{/depend}}
+	{{depend data.state}}
+	<tr>
+        <td>{{trans "%state:" state=$label.state}}</td>
+        <td>{{var data.state}}</td>
+    </tr>
+	{{/depend}}
+	{{depend data.country}}
+	<tr>
+        <td>{{trans "%country:" country=$label.country}}</td>
+        <td>{{var data.country_name}}</td>
+    </tr>
+	{{/depend}}
+	{{depend data.zip}}
+	<tr>
+        <td>{{trans "%zip:" zip=$label.zip}}</td>
+        <td>{{var data.zip}}</td>
+    </tr>
+	{{/depend}}
+	<tr>
+        <td>{{trans "%contact_number:" contact_number=$label.contact_number}}</td>
+        <td>{{var data.phone}}</td>
+    </tr>
+	{{depend data.website}}
+	<tr>
+        <td>{{trans "%website:" website=$label.website}}</td>
+        <td>{{var data.website}}</td>
+	</tr>
+	{{/depend}}
+	<tr>
+        <td>{{trans "%description:" description=$label.description}}</td>
+        <td>{{var data.bus_desc}}</td>
+	</tr>
+	{{depend data.date_time}}
+	<tr>
+        <td>{{trans "%date_time:" date_time=$label.date_time}}</td>
+        <td>{{var data.date_time}}</td>
+	</tr>
+	{{/depend}}
+	{{depend data.extra_one}}
+	<tr>
+        <td>{{trans "%extra_one:" extra_one=$label.extra_one}}</td>
+        <td>{{var data.extra_one}}</td>
+	</tr>
+	{{/depend}}
+	{{depend data.extra_two}}
+	<tr>
+        <td>{{trans "%extra_two:" extra_two=$label.extra_two}}</td>
+        <td>{{var data.extra_two}}</td>
+	</tr>
+	{{/depend}}
+	{{depend data.extra_three}}
+	<tr>
+        <td>{{trans "%extra_three:" extra_three=$label.extra_three}}</td>
+        <td>{{var data.extra_three}}</td>
+	</tr>
+	{{/depend}}
+	{{depend data.uploaded_files}}
+	<tr>
+        <td>{{trans "%upload_file:" upload_file=$label.upload_file}}</td>
+        <td>{{var data.uploaded_files|raw}}</td>
+	</tr>
+	{{/depend}}
+</table>
+<br/>
+{{trans "Thank you,"}} {{var store.getFrontendName()}}
+
+
+
+
+
+

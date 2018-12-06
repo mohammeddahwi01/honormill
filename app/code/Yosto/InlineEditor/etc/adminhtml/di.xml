@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 x-mage2(Yosto). All rights reserved.
+ * See README.md for details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="customCatalogProductHelperGalleryContent" type="Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery\Content">
+        <arguments>
+            <argument name="mediaConfig" xsi:type="object">Magento\Catalog\Model\Product\Media\Config</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Catalog\Ui\DataProvider\Product\ProductDataProvider">
+        <arguments>
+            <argument name="addFieldStrategies" xsi:type="array">
+                <item name="category_ids" xsi:type="object">Yosto\InlineEditor\Ui\DataProvider\Product\AddCategoryIdsFieldToCollection</item>
+            </argument>
+            <argument name="addFilterStrategies" xsi:type="array">
+                <item name="category_ids" xsi:type="object">Yosto\InlineEditor\Ui\DataProvider\Product\AddCategoryIdsFilterToCollection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

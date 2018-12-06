@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <htmlsitemap>
+            <general>
+                <enabled>1</enabled>
+                <product_enabled>1</product_enabled>
+                <categories_enabled>1</categories_enabled>
+                <cms_enabled>1</cms_enabled>
+                <accountpages_enabled>0</accountpages_enabled>
+                <contact_enabled>1</contact_enabled>
+            </general>
+        </htmlsitemap>
+    </default>
+</config>

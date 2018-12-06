@@ -1,0 +1,15 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$basePath = $block->getBaseUrl();
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+?>
+	<div class="categories-container-inner">
+		<h3 class="section-title">Categories</h3>
+		<?php
+		$categories = $block->getCatCollection();
+
+		foreach ($categories as $category){
+			echo $block->catagorylistrecursiveHtml($category->getChildrenCategories());
+		}
+		?>
+	</div>

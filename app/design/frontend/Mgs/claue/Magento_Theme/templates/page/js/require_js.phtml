@@ -1,0 +1,13 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<script>
+	var BASE_URL = WEB_URL = '<?= $block->escapeUrl($block->getBaseUrl()) ?>';
+	var RTL = false;
+    var require = {
+        "baseUrl": "<?= /* @escapeNotVerified */ $block->getViewFileUrl('/') ?>"
+    };
+</script>

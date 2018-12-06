@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Contact\Controller\Index\Index" type="PHXSolution\Override\Controller\Index\Index" />
+    <type name="Magento\Backend\Block\Widget\Grid\Extended">
+	    <plugin name="PHXSolution_Override::After" type="PHXSolution\Override\Block\Widget\Grid\Extended" />
+	</type>
+</config>

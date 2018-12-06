@@ -1,0 +1,37 @@
+<?php
+$name='LibreBaskerville-Bold';
+$type='TTF';
+$desc=array (
+  'CapHeight' => 770.0,
+  'XHeight' => 530.0,
+  'FontBBox' => '[-305 -260 1679 970]',
+  'Flags' => 262148,
+  'Ascent' => 970.0,
+  'Descent' => -260.0,
+  'Leading' => 0.0,
+  'ItalicAngle' => 0.0,
+  'StemV' => 165.0,
+  'MissingWidth' => 756.0,
+);
+$unitsPerEm=1000;
+$up=-75;
+$ut=50;
+$strp=250;
+$strs=50;
+$ttffile='/var/www/html/pub/honormill/app/code/PluginCompany/ProductPdf/view/base/googlefonts//librebaskerville/LibreBaskerville-Bold.ttf';
+$TTCfontID='0';
+$originalsize=161104;
+$sip=false;
+$smp=false;
+$BMPselected=false;
+$fontkey='librebaskervilleBI';
+$panose=' 0 0 2 0 0 0 0 0 0 0 0 0';
+$haskerninfo=false;
+$haskernGPOS=false;
+$hassmallcapsGSUB=false;
+$fontmetrics='win';
+// TypoAscender/TypoDescender/TypoLineGap = 970, -270, 0
+// usWinAscent/usWinDescent = 970, -270
+// hhea Ascent/Descent/LineGap = 970, -270, 0
+$useOTL=0x0000;
+$rtlPUAstr='';

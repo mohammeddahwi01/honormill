@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Data -->
+    <type name="MageWorx\OptionBase\Model\Product\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="absolutes" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Product\Absolutes</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\Product\Option\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="one_time" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\OneTime</item>
+                <item name="qty_input" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\QtyInput</item>
+                <item name="description" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\Description</item>
+                <item name="gallery_display_mode" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\GalleryDisplayMode</item>
+                <item name="image_mode" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\ImageMode</item>
+                <item name="is_fast_ship" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\SelectAllFastShip</item>
+                <item name="is_custom_order" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\SelectAllCustomOrder</item>
+                <item name="disabled" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\Option\Disabled</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\Product\Option\Value\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="cost" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\Cost</item>
+                <item name="weight" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\Weight</item>
+                <item name="description" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\Description</item>
+                <item name="is_default" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\IsDefault</item>
+                <item name="is_stocktab" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\IsFastshipTab</item>
+                <item name="is_customtab" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\IsCustomTab</item>
+                <item name="disabled" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\Disabled</item>
+                <item name="image" xsi:type="object">MageWorx\OptionFeatures\Model\Attribute\OptionValue\Image</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\CollectionUpdate\Product\Updaters">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="absolutes" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Product\Absolutes</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\CollectionUpdate\Option\Updaters">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="default_description" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Option\Description\DescriptionDefault</item>
+                <item name="store_description" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Option\Description\DescriptionStore</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\CollectionUpdate\Option\Value\Updaters">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="default_description" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\Description\DescriptionDefault</item>
+                <item name="store_description" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\Description\DescriptionStore</item>
+                <item name="default_is_default" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\IsDefault\IsDefaultDefault</item>
+                <item name="store_is_default" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\IsDefault\IsDefaultStore</item>
+                <item name="tooltipImage" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\TooltipImage</item>
+                <item name="baseImage" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\BaseImage</item>
+                <item name="images" xsi:type="object">MageWorx\OptionFeatures\Model\CollectionUpdater\Value\Images</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\Product\Option\Value\AdditionalHtmlData">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="qty_input" xsi:type="object">MageWorx\OptionFeatures\Model\Product\Option\Value\AdditionalHtml</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Model\Source\LinkedProductAttributes">
+        <arguments>
+            <argument name="linkedAttributes" xsi:type="array">
+                <item name="cost" xsi:type="string">cost</item>
+                <item name="weignt" xsi:type="string">weight</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MageWorx\OptionBase\Helper\Data">
+        <arguments>
+            <argument name="linkedAttributes" xsi:type="array">
+                <item name="cost" xsi:type="string">cost</item>
+                <item name="weignt" xsi:type="string">weight</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Installation -->
+    <type name="MageWorx\OptionBase\Model\Installer">
+        <arguments>
+            <argument name="installSchema" xsi:type="array">
+                <item name="optionfeatures_install_schema_data" xsi:type="object">MageWorx\OptionFeatures\Model\InstallSchema</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Config param injection -->
+    <type name="MageWorx\OptionFeatures\Helper\Data">
+        <arguments>
+            <argument name="optionValueDescriptionPath" xsi:type="string">mageworx_optionfeatures/main/use_description</argument>
+        </arguments>
+    </type>
+
+    <!-- Config param injection -->
+    <type name="MageWorx\OptionBase\Helper\Data">
+        <arguments>
+            <argument name="isDisabledConfigPath" xsi:type="string">mageworx_apo/optionfeatures/use_is_disabled</argument>
+        </arguments>
+    </type>
+     <!-- Plugins -->
+    <type name="Magento\Catalog\Model\Product\Type\Price">
+        <plugin name="AroundGetBasePrice" type="MageWorx\OptionFeatures\Plugin\AroundGetBasePrice" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="MageWorx\OptionBase\Block\Product\View\Options">
+        <plugin name="afterGetProductJsonConfig" type="MageWorx\OptionFeatures\Plugin\AfterGetProductJsonConfig" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Option\Type\Select">
+        <plugin name="aroundGetOptionPrice" type="MageWorx\OptionFeatures\Plugin\AroundGetOptionPrice" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Quote\Model\Quote\Item">
+        <plugin name="aroundCompareOptions" type="MageWorx\OptionFeatures\Plugin\AroundCompareOptions" sortOrder="10" disabled="false"/>
+    </type>
+    <!-- Replace main images based on the custom options selection on the checkout page -->
+    <type name="Magento\Checkout\Model\DefaultConfigProvider">
+        <plugin name="changeImageBasedOnOptionValues" type="MageWorx\OptionFeatures\Plugin\Checkout\DefaultConfigProvider" sortOrder="10" disabled="false"/>
+    </type>
+    <!-- Replace main images based on the custom options selection on the cart page (main cart, not in sidebar) -->
+    <type name="Magento\Checkout\Block\Cart\Item\Renderer">
+        <plugin name="changeImageInCartBasedOnOptionValues" type="MageWorx\OptionFeatures\Plugin\Cart\Item\Renderer" sortOrder="10" disabled="false"/>
+    </type>
+    <!-- Replace main images based on the custom options selection in the cart (sidebar) -->
+    <type name="Magento\Checkout\CustomerData\ItemPool">
+        <plugin name="changeImageInCartSidebarBasedOnOptionValues" type="MageWorx\OptionFeatures\Plugin\Checkout\CustomerData\ItemPool" sortOrder="10" disabled="false"/>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\View\Options">
+        <plugin name="mageworx_optionfeature_options"
+                type="MageWorx\OptionFeatures\Plugin\AfterGetOptions"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+
+    <type name="Magento\Catalog\Model\Product\Type\AbstractType">
+        <plugin name="mageworx_optionfeature_has_require_option"
+                type="MageWorx\OptionFeatures\Plugin\AroundHasRequiredOptions"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+
+    <!-- validate -->
+    <type name="MageWorx\OptionBase\Model\ValidationResolver">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="option_features" xsi:type="object">MageWorx\OptionFeatures\Model\Validator</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>

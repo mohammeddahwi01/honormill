@@ -1,0 +1,27 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php /** @var $block \Magento\Catalog\Block\Adminhtml\Product\Edit\Tab\Options */ ?>
+<div class="entry-edit form-inline">
+    <fieldset id="base_fieldset" class="fieldset admin__fieldset ">
+        <legend class="admin__legend legend">
+            <span><?php echo $block->getLegendText() ?></span>
+        </legend>
+        <br>
+
+        <div data-ui-id="admin-mageworx-product-groups-fieldset-element-form-field-test"
+             class="admin__field field with-note">
+            <div class="admin__field-control control">
+                <input type="hidden" value="" name="product[option_groups]">
+                <?php echo $block->getSelectOptionGroupsHtml() ?>
+                <div id="test-note" class="note"><?php echo $block->getNoteText() ?></div>
+            </div>
+        </div>
+    </fieldset>
+</div> 

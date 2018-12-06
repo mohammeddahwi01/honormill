@@ -1,0 +1,15 @@
+<?php
+/**
+* Copyright © 2016 Magento. All rights reserved.
+* See COPYING.txt for license details.
+*/
+// @codingStandardsIgnoreFile
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+$basePath = $block->getBaseUrl();
+?>
+<?php if($sitemapHelper->isProductEnabled()) : ?>
+	<div class="product-enable">
+	<span>For Our Product Sitemap, please</span>
+	<a href="<?php echo $basePath; ?>sitemap-product" title="Products Sitemap">Click Here</a>
+	</div>
+<?php endif; ?>

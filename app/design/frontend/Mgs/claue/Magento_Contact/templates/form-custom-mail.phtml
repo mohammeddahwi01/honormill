@@ -1,0 +1,90 @@
+<?php echo 'custom form'; exit;
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+if(isset($_POST["submit"])){
+// Checking For Blank Fields..
+if($_POST["name"]==""||$_POST["email"]==""||$_POST["telephone"]==""||$_POST["comment"]==""){
+ echo "Fill All Fields..";
+    }else{
+
+    	$email2 =  "websoftbizinc@hotmail.com";
+         // Check if the "Sender's Email" input field is filled out
+        $email="test@gmail.com";
+        // Sanitize E-mail Address
+        $email =filter_var($email, FILTER_SANITIZE_EMAIL);
+        // Validate E-mail Address
+        $email= filter_var($email, FILTER_VALIDATE_EMAIL);
+            if (!$email){
+            echo "Invalid Sender's Email";
+            }
+            else
+            {
+ 
+                // Compose a simple HTML email message
+                $message = '<html><body>';
+                $message .= '<strong>Name :</strong> '.$_POST['name'].'<br><br>';          
+                $message .= '<strong>Email :</strong> '.$_POST["email"].'<br><br>';
+                $message .= '<strong>Telephone :</strong> '.$_POST["telephone"].'<br><br>';
+                $message .= '<strong>Comment :</strong>  '.$_POST["comment"].'<br><br>';
+                $message .= '</body></html>';
+
+                $subject = "Contact Us Form";
+                // To send HTML mail, the Content-type header must be set
+                $headers  = 'MIME-Version: 1.0' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+ 
+                $headers .= 'From:'. $email2 . "rn"; // Sender's Email
+                $headers .= 'Cc:'. $email2 . "rn"; // Carbon copy to Sender
+                // Message lines should not exceed 70 characters (PHP rule), so wrap it
+                $message = wordwrap($message, 70);
+                // Send Mail By PHP Mail Function
+                mail("test@axtongroup.com", $subject, $message, $headers);
+                echo "Thanks for contacting us with your comments and questions. We\'ll respond to you very soon.";
+        }        
+    }
+}
+?>
+<?php 
+	$themeHelper = $this->helper('MGS\Mpanel\Helper\Data');
+	$canUsePanel = $themeHelper->acceptToUsePanel();
+?>
+<div class="contact-form-content">
+	<div class="row">
+		<div class="col-sm-12 col-xs-12 margin-bottom60">
+			<h3 class="text-uppercase margin-bottom15"><?php echo __('Send us a message'); ?></h3>
+			<form class="form contact" action="#" id="contact-form" method="post" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>" data-mage-init='{"validation":{}}'>
+				<div class="form-group name required">
+					<label for="name"><?php echo __('Name'); ?></label>
+					<input name="name" id="name" title="<?php /* @escapeNotVerified */ echo __('Name') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserName()) ?>" class="input-text form-control" type="text" data-validate="{required:true}"/>
+				</div>
+				<div class="form-group email required">
+					<label for="email"><?php echo __('Email'); ?></label>
+					<input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" value="<?php echo $block->escapeHtml($this->helper('Magento\Contact\Helper\Data')->getUserEmail()) ?>" class="input-text form-control" type="email" data-validate="{required:true, 'validate-email':true}"/>
+				</div>
+				<div class="form-group telephone">
+					<label for="telephone"><?php echo __('Phone'); ?></label>
+					<input name="telephone" id="telephone" title="<?php /* @escapeNotVerified */ echo __('Phone') ?>" value="" class="input-text form-control" type="text" />
+				</div>
+				<div class="form-group comment required">
+					<label for="comment"><?php echo __('Content'); ?></label>
+					<textarea name="comment" id="comment" title="<?php /* @escapeNotVerified */ echo __('Content') ?>" class="input-text form-control" cols="5" rows="7" data-validate="{required:true}"></textarea>
+				</div>
+				<div class="actions-toolbar">
+					<input type="hidden" name="hideit" id="hideit" value="" />
+					<button type="submit"  name="submit" title="<?php /* @escapeNotVerified */ echo __('Send Messages') ?>" class="action submit btn btn-primary">
+						<span><?php /* @escapeNotVerified */ echo __('Send Messages') ?></span>
+					</button>
+				</div>
+			</form>
+		</div>
+	 
+	</div>
+	
+</div>

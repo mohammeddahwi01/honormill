@@ -1,0 +1,84 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?php /* @escapeNotVerified */ echo $block->getWidgetOptionsJson(); ?>'>
+        <?php if ($block->isExpanded()): ?>
+            <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
+        <?php endif; ?>
+
+       <?php
+                $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+                $_request = $objectManager->get('\Magento\Framework\App\Request\Http');
+                $urlInterface = \Magento\Framework\App\ObjectManager::getInstance()->get('Magento\Framework\UrlInterface');
+                $currenturl = $urlInterface->getCurrentUrl();
+
+            ?>
+        <?php if ($_request->getFullActionName()=='catalog_category_view'){
+                $category = $objectManager->get('Magento\Framework\Registry')->registry('current_category');
+                $categoryUrl = $category->getUrl(); 
+         ?> 
+
+            <div class="custom-filter-options">
+                <?php /*?><span id="all" class="all-products active ">
+                    <a href="<?php echo $categoryUrl ?>"><?php echo __('All Products') ?></a></span><?php */?>
+                <span id="fast_ship" class="fast-ship-products <?php if(isset($_GET['fast_ship'])) { echo 'active-custom-tab'; }?>">
+                    <a href="<?php echo $categoryUrl ?>?fast_ship=4"><?php echo __('Fast Ship') ?></a></span>
+                <span id="custom_order" class="custom-order-products <?php if(isset($_GET['custom_order'])) { echo 'active-custom-tab'; }?>">
+                    <a href="<?php echo $categoryUrl ?>?custom_order=6"><?php echo __('Custom Order') ?></a></span>
+            </div>
+        <?php }else  if ($_request->getFullActionName()=='catalogsearch_result_index'){ 
+
+            $searchurl = strtok($currenturl, '&');
+
+            ?> 
+             <div class="custom-filter-options">
+                 <?php /*?><span id="all" class="all-products active ">
+                    <a href="<?php echo $searchurl ?>"><?php echo __('All Products') ?></a></span> <?php */?>
+                <span id="fast_ship" class="fast-ship-products  <?php if(isset($_GET['fast_ship'])) { echo 'active-custom-tab'; }?>">
+                    <a href="<?php echo $currenturl ?>&fast_ship=4"><?php echo __('Fast Ship') ?></a></span>
+                <span id="custom_order" class="custom-order-products <?php if(isset($_GET['custom_order'])) { echo 'active-custom-tab'; }?> ">
+                    <a href="<?php echo $currenturl ?>&custom_order=6"><?php echo __('Custom Order') ?></a></span>
+            </div>
+        <?php }else if($_request->getFullActionName() == 'catalogsearch_advanced_result'){ ?>
+             <div class="custom-filter-options">
+               <?php /*?> <span id="all" class="all-products active ">
+                    <a href="<?php echo $currenturl ?>"><?php echo __('All Products') ?></a></span><?php */?>
+                <span id="fast_ship" class="fast-ship-products <?php if(isset($_GET['fast_ship'])) { echo 'active-custom-tab'; }?> ">
+                    <a href="<?php echo $currenturl ?>&fast_ship=4"><?php echo __('Fast Ship') ?></a></span>
+                <span id="custom_order" class="custom-order-products <?php if(isset($_GET['custom_order'])) { echo 'active-custom-tab'; }?>">
+                    <a href="<?php echo $currenturl ?>&custom_order=6"><?php echo __('Custom Order') ?></a></span>
+            </div>
+        <?php } ?>
+        <?php if ($_request->getFullActionName()=='catalog_category_view' ) {
+            echo "<div class='custom-filter-div'>";
+        }
+        ?>
+        <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>
+
+        <?php echo $block->getPagerHtml() ?>
+
+        <?php if ($block->isExpanded()): ?>
+            <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/sorter.phtml')) ?>
+        <?php endif; ?>
+		<?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter.phtml')) ?>
+        <?php if ($_request->getFullActionName()=='catalog_category_view' ) {
+            echo "</div>";
+        }
+        ?>
+    </div>
+<?php endif ?>

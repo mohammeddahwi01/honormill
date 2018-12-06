@@ -1,0 +1,22 @@
+{
+    "name": "phxsolution/module-categoryimage",
+    "description": "Add custom image attribtue to category.",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "vijayp@phxsolution.com",
+            "name": "Vijay Pithava"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PHXSolution\\CategoryImage\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

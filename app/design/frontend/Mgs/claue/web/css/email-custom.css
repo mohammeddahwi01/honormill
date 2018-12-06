@@ -1,0 +1,24 @@
+.wrapper { width: 100%; }
+.wrapper .wrapper-inner { background: #f8f8f8; padding-top: 30px; padding-bottom: 30px; }
+.wrapper .wrapper-inner .main { width: 660px; }
+td.header { background-color: #fff;padding:25px 25px 11px; border-top-left-radius: 15px; border-top-right-radius: 15px; overflow: hidden; text-align: center; border: 1px solid #000; border-bottom: 0px; }
+td.header table { width: 100%; }
+.main-content { padding: 10px; border: 1px solid #000; background: #fff; }
+.footer { background-color:#000; color: #fff; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; overflow: hidden; text-align: center; }
+.email-items thead tr th {border-bottom: 1px solid #ededed; padding-bottom: 5px; border-top: 1px solid #ededed; padding-top: 5px; }
+.order-totals { text-align: right; }
+.email-items tbody td {padding-top: 5px; padding-bottom: 5px; }
+.order-totals th,.order-totals td {padding-top: 5px; padding-bottom: 5px; }
+tr.order-date-remark {border-top: 1px solid #c1aa81; }
+tr.order-date-remark td h3 {margin-top: 10px; margin-bottom: 5px;}
+ul li > a:hover, ul li > a, ul li > a:visited, td > a:hover, div p a:hover,a:hover, a, div p a, td > a, ul li > a { font-weight: bold; }
+li { list-style: none; display: inline-block; }
+table { width: 100%; border-spacing: 0px; }
+.item-price { text-align: right; }
+.item-info { text-align: left; }
+.item-qty { text-align: center; }
+.order-totals tr:first-child th, .order-totals tr:first-child td {border-top: 1px solid #ededed; }
+.order-totals tr:last-child th, .order-totals tr:last-child td {border-bottom: 1px solid #ededed; }
+.address-details { width: 50%; }
+b, p { line-height: 18px; }
+p {margin-top: 5px; margin-bottom: 5px; }

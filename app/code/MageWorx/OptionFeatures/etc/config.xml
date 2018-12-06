@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2018 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mageworx_apo>
+            <optionfeatures>
+                <use_weight>1</use_weight>
+                <use_absolute_weight>1</use_absolute_weight>
+                <use_cost>1</use_cost>
+                <use_absolute_cost>1</use_absolute_cost>
+                <use_absolute_price>1</use_absolute_price>
+                <use_one_time>1</use_one_time>
+                <use_qty_input>0</use_qty_input>
+                <use_description>1</use_description>
+                <use_option_description>1</use_option_description>
+                <use_is_default>1</use_is_default>
+                <use_is_disabled>1</use_is_disabled>
+                <base_image_thumbnail_size>35</base_image_thumbnail_size>
+                <swatch_size>35</swatch_size>
+                <tooltip_image_thumbnail_size>130</tooltip_image_thumbnail_size>
+            </optionfeatures>
+        </mageworx_apo>
+    </default>
+</config>

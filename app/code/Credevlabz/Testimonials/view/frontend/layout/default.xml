@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Credevlabz_Testimonials::css/owl.carousel.css"></css>
+        <css src="Credevlabz_Testimonials::css/owl.theme.css"></css>
+        <css src="Credevlabz_Testimonials::css/owl.transitions.css"></css>
+    </head>
+    <body>
+        <!--<referenceContainer name="after.body.start">
+            <block class="Credevlabz\Testimonials\Block\TestimonialsWidget" size="3" name="testimonials.list" template="Credevlabz_Testimonials::widget.phtml" >
+                <arguments>
+                    <argument name="size" xsi:type="string">3</argument>
+                </arguments>
+            </block>>
+        </referenceContainer>-->
+    </body>
+</page>

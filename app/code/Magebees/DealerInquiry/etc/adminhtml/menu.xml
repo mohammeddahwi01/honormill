@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magebees_DealerInquiry::inquiry_content" title="MageBees Dealer Management" module="Magebees_DealerInquiry" sortOrder="60" parent="Magento_Customer::customer" action="inquiry/inquiry" resource="Magebees_DealerInquiry::inquiry_content" />
+    </menu>
+</config>

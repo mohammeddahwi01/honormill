@@ -1,0 +1,38 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+<?php
+/** @var \MageWorx\OptionBase\Block\Product\View\Options $block */
+?>
+<?php if (count($block->getOptions())) : ?>
+    <?php $multiplier = time() . rand(0, 256000); ?>
+    <div class="custom-mw-base-js-<?php echo $multiplier; ?>" data-mage-init='
+        {
+            "MageWorx_OptionBase/js/catalog/product/base": {
+                    "optionConfig": <?php echo $block->getJsonConfig() ?>,
+                    "productConfig": <?php echo $block->getProductJsonConfig() ?>,
+                    "localePriceFormat": <?php echo $block->getLocalePriceFormat() ?>,
+                    "productFinalPriceExclTax": <?php echo $block->getProductFinalPrice(false) ?>,
+                    "productRegularPriceExclTax": <?php echo $block->getProductRegularPrice(false) ?>,
+                    "productFinalPriceInclTax": <?php echo $block->getProductFinalPrice(true) ?>,
+                    "productRegularPriceInclTax": <?php echo $block->getProductRegularPrice(true) ?>,
+                    "priceDisplayMode": "<?php echo $block->getPriceDisplayMode() ?>",
+                    "catalogPriceContainsTax": "<?php echo $block->getCatalogPriceContainsTax() ?>",
+                    "extendedOptionsConfig": <?php echo $block->getExtendedOptionsConfig() ?>
+                }
+        }
+'
+    >
+    </div>
+    <script>
+        require([
+            "jquery"
+        ], function ($) {
+            var $element = $('.custom-mw-base-js-<?php echo $multiplier;?>');
+            $element.trigger('contentUpdated');
+        });
+    </script>
+<?php endif; ?>

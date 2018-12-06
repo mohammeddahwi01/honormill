@@ -1,0 +1,57 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+use Magento\Catalog\Model\Product\ProductList\Toolbar;
+?>
+<?php if ($block->getCollection()->getSize()): ?>
+    <div class="toolbar toolbar-products" data-mage-init='<?php /* @escapeNotVerified */ echo $block->getWidgetOptionsJson(); ?>'>
+        <ul class="product-toolbar clearfix">
+            <li>
+                <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>
+            </li>
+
+            <li class="right">
+                <?php
+                    $pagerBlock = $block->getChildBlock('product_list_toolbar_pager_sitemap');
+                    if ($pagerBlock instanceof \Magento\Framework\DataObject) {
+                        /* @var $pagerBlock \Magento\Theme\Block\Html\Pager */
+                        $pagerBlock->setAvailableLimit($block->getAvailableLimit());
+
+                        $pagerBlock->setUseContainer(
+                            false
+                        )->setShowPerPage(
+                            false
+                        )->setShowAmounts(
+                            false
+                        )->setFrameLength(
+                            5
+                        )->setJump(
+                            0
+                        )->setLimit(
+                            $block->getLimit()
+                        )->setCollection(
+                            $block->getCollection()
+                        );
+
+                        echo $pagerBlock->toHtml();
+                    }
+                ?>
+            </li>
+        </ul>
+        <?php if ($block->isExpanded()): ?>
+            <?php //include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
+        <?php endif; ?>
+    </div>
+<?php endif ?>

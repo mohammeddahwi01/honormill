@@ -1,0 +1,198 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="' . __('* Required Fields') . '"';
+}
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$_registry = $objectManager->get('\Magento\Framework\Registry');
+$_scopeConfig = $objectManager->get('\Magento\Framework\App\Config\ScopeConfigInterface');
+$_product = $_registry->registry('current_product');
+$multi_select_option = ($_product->getData('multi_select_option')) ? 'multi-select-option' : '';
+$fastShipGlobalTitle = $_scopeConfig->getValue('mageworx_optionfeatures/main/product_fastship_title_global');
+$customOrderGlobalTitle = $_scopeConfig->getValue('mageworx_optionfeatures/main/product_customorder_title_global');
+$fastShipTitle = (!empty($_product->getProductStockTabTitle())) ? $_product->getProductStockTabTitle() : $fastShipGlobalTitle;
+$customOrderTitle = (!empty($_product->getProductCustomTabTitle())) ? $_product->getProductCustomTabTitle() : $customOrderGlobalTitle;
+$mageWorxHelper = $this->helper('MageWorx\OptionTemplates\Helper\Data');
+
+$sizeOptIdArr = array();
+$colorOptIdArr = array();
+$fabricOptIdArr = array();
+foreach ($_product->getOptions() as $options) {
+   $optionData = $options->getValues();
+    foreach ($optionData as $data) {
+        if ($data->getOptSize() != '') {
+            $sizeOptIdArr[] = $data->getOptSize();
+        }
+        if ($data->getOptColor() != '') {
+            $colorOptIdArr[] = $data->getOptColor();
+        }
+        if ($data->getOptFabric() != '') {
+            $fabricOptIdArr[] = $data->getOptFabric();
+        }
+    }
+}
+
+$sizeOpt = $mageWorxHelper->getOptionFormattedArray('size', $sizeOptIdArr);
+$colorOpt = $mageWorxHelper->getOptionFormattedArray('color', $colorOptIdArr);
+$fabricOpt = $mageWorxHelper->getOptionFormattedArray('fabric', $fabricOptIdArr);
+?>
+<div class="product-options-wrapper" id="product-options-wrapper"<?= /* @escapeNotVerified */ $required ?>>
+	<div class="custom-options-tabs">
+    	<ul>
+    		<li class="stocktab active"><span><?php echo __('Fast Ship') ?></span></li>
+    		<li class="customtab"><span><?php echo __('Custom Order') ?></span></li>
+    	</ul>
+    </div>
+    <div class="fieldset <?=$multi_select_option?>" tabindex="0">
+        <div id="stocktab" class="stocktab tab-title active">
+        	<p><?php echo $fastShipTitle ?></p>
+        </div>
+        <div id="customtab" class="customtab tab-title">
+        	<p><?php echo $customOrderTitle ?></p>
+        </div>
+        <?php if(count($sizeOpt) > 0 || count($colorOpt) > 0 || count($fabricOpt) > 0) { 
+            $ttl = [];
+            if (count($sizeOpt) > 0) {
+                $ttl[] = __("Size");
+            }
+            if (count($colorOpt) > 0) {
+                $ttl[] = __("Color");
+            }
+            if (count($fabricOpt) > 0) {
+                $ttl[] = __("fabric");
+            }
+
+            $ttl = implode(', ', $ttl);
+        ?>
+        <div class="attribute-filter-container">
+            <input type="hidden" name="filterSelection" id="filterSelection">
+            <input type="hidden" name="filterTitle" id="filterTitle" value="<?php echo __("select")." ".$ttl; ?>">
+            <input type="hidden" name="filterTitleNew" id="filterTitleNew" value="">
+            <p class="custom-ttl" style="display: none;"></p>
+            <p class="product-filter-ttl"><?php echo __("Filter By Select")." ".$ttl; ?></p>
+            <?php if (count($sizeOpt) > 0) { ?>
+                <div class="attribute-filter filter-size">
+                    <div class="filter-name">Size</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($sizeOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if (count($colorOpt) > 0) { ?>
+                <div class="attribute-filter filter-color">
+                    <div class="filter-name">Color</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($colorOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <?php if (count($fabricOpt) > 0) { ?>
+                <div class="attribute-filter filter-fabric">
+                    <div class="filter-name">Fabric</div>
+                    <div class="filter-values">
+                        <ul class="filter-values-list">
+                            <?php foreach($fabricOpt as $val) { ?>
+                                <li class="filter-val" data-val="<?php echo $val['value'] ?>">
+                                    <span class="val"><?php echo $val['label'] ?></span>
+                                </li>
+                            <?php } ?> 
+                        </ul>
+                    </div>
+                </div>
+            <?php } ?>
+            <div class="selected-filters"><span class="clear-all" style="display: none;">Clear All<i class="fa fa-close"></i></span></div>
+            <div class="no-record-found" style="display: none;">
+                <p>We're sorry, but your selection couldn't find any results. Here are a few tips that might help:</p>
+                <ul>
+                    <li>Remove last selected item.</li>
+                    <li>Clear all items.</li>
+                    <li>Clear any items selected.</li>
+                </ul>
+                <p>If you need further assistance please call 212-560-5977 or click to chat</p>
+            </div>
+        </div>
+        <?php } ?>
+        <?= $block->getChildHtml('', true) ?>
+    </div>
+</div>
+<div class="i-have-my-own-material-leather" style="display: none;">
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('i-have-my-own-material-leather')->toHtml();?>    
+</div>
+
+<div class="need-it-faster-rush-delivery" style="display: none;">
+    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('need-it-faster-rush-delivery')->toHtml();?>    
+</div>
+<script>
+    require(
+        [
+            'jquery',
+            'Magento_Ui/js/modal/modal'
+        ],
+        function(
+            $,
+            modal
+        ) {
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: true,
+                modalClass: 'info-custom-modal',
+                //title: 'popup modal title',
+                buttons: [{
+                    text: $.mage.__('Close'),
+                    class: '',
+                    click: function () {
+                        this.closeModal();
+                    }
+                }]
+            };
+            $("#i-have-my-own-material-leather").click(function() {
+                $(".i-have-my-own-material-leather").modal(options).modal('openModal');
+            });
+
+            $("#need-it-faster-rush-delivery").click(function() {
+                $(".need-it-faster-rush-delivery").modal(options).modal('openModal');
+            });
+
+            $('body').on('click', '.chat-now-sec a', function(){
+                $zopim.livechat.window.show();
+            });
+
+            $('body').on('input', '#filterTitleNew', function(){
+                if ($('.sel-opt-title').length > 0) {
+                    var sel = '<?php echo __("SELECTED: ") ?>';
+                    if ($('#filterTitleNew').val() == '') {
+                        $('.custom-ttl').text(sel + $('.sel-opt-title').text());
+                    } else {
+                        $('.custom-ttl').text(sel + $('#filterTitleNew').val());
+                    }
+                    $('.custom-ttl').show();
+                   // $('.product-filter-title').hide();
+                } else {
+                    //$('.product-filter-title').text($('#filterTitle').val());
+                    $('.custom-ttl').hide();
+                 }
+            });
+        }
+    );
+</script>

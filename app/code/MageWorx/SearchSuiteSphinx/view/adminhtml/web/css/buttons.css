@@ -1,0 +1,20 @@
+.sphinx-message {
+    margin-top: 15px!important;
+    padding: 7px;
+}
+.sphinx-message span {
+    font-weight: 700;
+}
+.sphinx-message ul {
+    margin-left: 20px;
+}
+.sphinx-message li {
+    margin: 0px !important;
+    font-weight: 100;
+    font-style: normal!important;
+    list-style: disc;
+}
+
+.sphinx-message_hide {
+    display: none;
+}

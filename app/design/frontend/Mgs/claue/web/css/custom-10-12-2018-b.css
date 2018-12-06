@@ -1,0 +1,216 @@
+ .product-options-wrapper .fieldset .attribute-filter-container{display:none; }
+ 
+.cat-title span{
+     text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    font-family: poppins;
+        position: relative;
+    top: -109px;
+    font-style: normal;
+    text-transform: capitalize;
+    
+    color: #fff;
+    font-size: 30px;
+        font-style: normal;
+    text-transform: capitalize;
+}
+.cat-header-sec{ text-align: center; height: 150px; }
+
+.cat-header-sec::before {
+    
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+   
+    width: 100%;
+    height: 150px !important;
+}
+.category-imag{display:none !important; }
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .cat-title span{ top:-80px !important; }
+ 
+#placeholder-header{height:142px !important;  }  
+
+ .cat-header-sec::before {
+    
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    
+    width: 100%;
+    height: 150px !important;
+}
+
+}
+
+.product-sub-infomation .sku{display:none !important; }
+
+.shipaccordion{background-color: #fff;
+    color: #121212;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: 0;
+    font-size: 16px;
+    transition: .4s;
+    border: solid 1px #121212;
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    text-transform: uppercase;
+}
+
+.shipaccordion:hover {
+    border: solid 1px #c1aa81 !important;
+    background-color: #c1aa81 !important;
+    color: #fff;
+}
+
+.shipaccordion.active:hover {
+    border: solid 1px #c1aa81  !important;
+    background-color: #c1aa81  !important;
+    color: #fff;
+}
+
+
+.shipaccordion.active {
+    border: solid 1px #121212 !important;
+    background-color: #121212 !important;
+    color: #fff;
+}
+.shipaccordion.active:after {
+   content: "\2212";
+    color: #fff;
+}
+
+.shipaccordion:after{ content: '\002B';
+    color: #121212;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.shipaccordion:hover:after{ color:#fff; }
+
+.shippanel{color: #030303;
+     border-radius:5px;
+    padding: 5px;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;}
+
+.accordion.active{ background: #121212; color: #fff; }
+
+.catalog-category-view .toolbar{ display: inline-block !important;  }
+
+
+ .catalog-category-view .modes{-webkit-flex:0 !important; flex:0 !important; width: 150px !important; float: left !important;}
+ .catalog-category-view .custom-filter-options{ width:256px !important; float: left; margin-left: 10px; margin-top: 10px; }
+ .catalog-category-view .custom-filter-div{ width:450px !important; float: right; }
+ /*.catalog-category-view .toolbar .sorter{ width: 279px; float: left; text-align: left !important; }*/
+ .catalog-category-view .field.limiter{ width: 179px; float: left; position: relative; top:-40px; }
+
+.catalogsearch-result-index .toolbar{ display: inline-block !important;  } 
+ .catalogsearch-result-index .modes{-webkit-flex:0 !important; flex:0 !important; width: 150px !important; float: left !important;}
+ .catalogsearch-result-index .custom-filter-options{ width:256px !important; float: left; margin-left: 10px; margin-top: 10px; }
+ .catalogsearch-result-index .custom-filter-div{ width:450px !important; float: right; }
+ /*.catalog-category-view .toolbar .sorter{ width: 279px; float: left; text-align: left !important; }*/
+ .catalogsearch-result-index .field.limiter{     width: 179px;float: right; position: relative; top: -42px;
+    left: -269px;}
+.catalogsearch-result-index .list-inline{ width: 450px !important; float: right; }
+
+.catalogsearch-result-index .bottom-pagination .custom-filter-options{ margin-top: 20px; }
+ 
+ .toolbar .custom-filter-options span.fast-ship-products a:before {
+    background-image: url(../images/fast-ship-icon-small.png);
+    height: 21px;
+    width: 41px;
+    position: absolute;
+    left: 0;
+    content: '';
+}
+
+.toolbar .custom-filter-options span.custom-order-products a:before {
+    background-image: url(../images/custom-order-icon-small.png);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 0px;
+    content: '';
+}
+
+.toolbar .custom-filter-options span a {
+    font-family:poppins;
+    font-weight: 500;
+    font-size: 13px;
+   
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding-left: 48px;
+}
+.toolbar .custom-filter-options .custom-order-products a {
+    font-family:poppins;
+    font-weight: 500;
+    font-size: 13px;
+   
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    padding-left: 30px;
+}
+
+.catalog-category-view .active-custom-tab a{ color: #c1aa81; }
+.catalog-category-view .bottom-pagination .custom-filter-options{ margin-top: 18px; }
+
+.fast-ship-sec .product-item-info{ clear:none !important}
+.fast-ship-sec .product-item-details{ height:85px}
+
+.custom-order-sec .product-item-info{ clear:none !important}
+.custom-order-sec .product-item-details{ height:85px}
+
+@media (max-width: 767px) {
+  .catalog-category-view .toolbar .sorter {
+    text-align: center !important;
+    margin-top: 20px;
+    margin-left: 115px;
+  }
+.catalog-category-view .bottom-pagination .custom-filter-options {
+    margin-top: 11px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    float: left;
+}
+
+.catalogsearch-result-index .toolbar .sorter {
+    text-align: center !important;
+    margin-top: 20px;
+    width: 150px !important;
+    float: left !important; 
+  }
+.catalogsearch-result-index .bottom-pagination .custom-filter-options{ margin-top: 11px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    float: left; }
+
+}
+
+/*---------------9-27-2018--------------------*/
+
+.inquiry_link{ float:none !important;}
+.mfp-content .col-mp{ float:none !important}
+
+.inquiry .actions-toolbar .action.primary:hover {
+    color: #fff;
+    border: 2px solid #c1aa81 !important;
+    background-color: #c1aa81 !important;
+}
+
+
+.bottom-pagination .toolbar  .custom-filter-options {display:none !important; }

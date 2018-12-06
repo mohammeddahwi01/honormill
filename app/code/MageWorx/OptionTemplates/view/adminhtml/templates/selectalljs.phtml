@@ -1,0 +1,29 @@
+<script>
+require(['jquery', 'Magento_Ui/js/modal/alert'],function($, alert){
+    $(document).ready(function(){
+        $('body').on('click', '.admin__field-alloptincl input[type="checkbox"]', function(){
+            if($(this).is(':checked')) {
+                alert({
+                    title: 'Alert',
+                    content: 'Warning: All Fast Ship options will be reset base on selection.',
+                    actions: {
+                        always: function(){}
+                    }
+                });
+            }
+        });
+
+        $('body').on('click', '.admin__field-alloptinclco input[type="checkbox"]', function(){
+            if($(this).is(':checked')) {
+                alert({
+                    title: 'Alert',
+                    content: 'Warning: All Custom Order options will be reset base on selection.',
+                    actions: {
+                        always: function(){}
+                    }
+                });
+            }
+        });
+    });
+});
+</script>

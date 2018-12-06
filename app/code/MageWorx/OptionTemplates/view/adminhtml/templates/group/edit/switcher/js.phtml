@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+/**
+ * @see \MageWorx\SeoTemplates\Block\Adminhtml\Attachment\Edit\Switcher
+ */
+?>
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        $('#group_assign_type1').on('change', function () {
+
+            if ($('#group_assign_type1:checked')) {
+                $('#group_tabs_group_products').parent().show();
+                $('#group_tabs_group_productids').parent().hide();
+                $('#group_tabs_group_productskus').parent().hide();
+            }
+        });
+
+        $('#group_assign_type2').on('change', function () {
+
+            if ($('#group_assign_type2:checked')) {
+                $('#group_tabs_group_productids').parent().show();
+                $('#group_tabs_group_productskus').parent().hide();
+                $('#group_tabs_group_products').parent().hide();
+            }
+        });
+
+        $('#group_assign_type3').on('change', function () {
+
+            if ($('#group_assign_type3:checked')) {
+                $('#group_tabs_group_productids').parent().hide();
+                $('#group_tabs_group_productskus').parent().show();
+                $('#group_tabs_group_products').parent().hide();
+            }
+        });
+    });
+</script>

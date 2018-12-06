@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="inquiry_customer_email_email_template" label="Dealer Inquiry-Customer Submit Form Email" file="customer_inquiry.html" type="html" module="Magebees_DealerInquiry" area="frontend"/>
+	
+	<template id="inquiry_admin_email_email_template" label="Dealer Inquiry-Admin Email" file="admin_inquiry.html" type="html" module="Magebees_DealerInquiry" area="adminhtml"/>
+	
+	<template id="inquiry_create_account_email_template" label="Dealer Inquiry-Create Customer Email" file="create_customer.html" type="html" module="Magebees_DealerInquiry" area="frontend"/>
+	
+</config>

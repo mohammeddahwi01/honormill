@@ -1,0 +1,353 @@
+<?php $helper = $this->helper('Magebees\DealerInquiry\Helper\Data'); ?>
+<script type="text/javascript">
+//clear uploaded file
+function clearFileInputField(tagId) {
+    document.getElementById(tagId).innerHTML = 
+                    document.getElementById(tagId).innerHTML;
+}
+</script>
+<?php if ($block->setCaptchaHide()) : ?>
+<script type="text/javascript">
+    require([
+        'jquery'
+    ],
+    function($) {
+        <?php $url = $block->getRefreshUrl(); ?>
+       $('#inquiry-form').on('click', '#captcha_refresh', function(event){
+            $.ajax({
+                    url : '<?php echo $url; ?>',
+                    type: 'get',
+                    dataType: 'json',
+                    showLoader:true,
+                    success: function(data){
+                        $("#captcha_image").attr("src",'<?php echo $helper->getImgUrl();?>'+data);
+                    }
+                });
+            })
+        }
+    );
+</script>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/template',
+        'jquery/ui',
+        'mage/translate'
+    ],
+    function($, mageTemplate) {
+    <?php $url = $this->getUrl('*/*/regionlist'); ?>
+       $('#inquiry-form').on('change', '#country', function(event){
+            $.ajax({
+                    url : '<?php echo $url; ?>country/' +  $('#country').val(),
+                    type: 'get',
+                    dataType: 'json',
+                    showLoader:true,
+                    success: function(data){
+                        $('#state_div').empty();
+                        $('#state_div').append(data.htmlconent);
+                   }
+                });
+       })
+    }
+
+);
+</script>
+<?php endif; ?>
+<?php $form_data = $block->getFormData(); ?>
+<div class="page-title">
+    <h1><?php echo __('Apply for HONORMILL Trade Account') ?></h1>
+</div>
+<form class="form inquiry"
+      action="<?php /* @escapeNotVerified */ echo $block->getFormAction(); ?>"
+      id="inquiry-form"
+      method="post"
+      enctype="multipart/form-data"
+      
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+        <?php if ($block->getDisplayHeading()) : ?>
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __($block->getHeading()) ?></span></legend><br />
+        <?php endif; ?>
+        
+        <div class="field note no-label"><?php /* @escapeNotVerified */ echo __($block->getDesc()) ?></div>
+        <div class="field name required">
+            <label class="label" for="first_name"><span><?php /* @escapeNotVerified */ echo __($block->getFirstName()) ?></span></label>
+            <div class="control">
+                <input name="first_name" id="first_name" title="<?php /* @escapeNotVerified */ echo __($block->getFirstName()) ?>" value="<?php echo $form_data['first_name']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="last_name"><span><?php /* @escapeNotVerified */ echo __($block->getLastName()) ?></span></label>
+            <div class="control">
+                <input name="last_name" id="last_name" title="<?php /* @escapeNotVerified */ echo __($block->getLastName()) ?>" value="<?php echo $form_data['last_name']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field required">
+            <label class="label" for="company"><span><?php /* @escapeNotVerified */ echo __($block->getCompanyName()) ?></span></label>
+            <div class="control">
+                <input name="company" id="company" title="<?php /* @escapeNotVerified */ echo __($block->getCompanyName()) ?>" value="<?php echo $form_data['company']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field telephone required">
+            <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __($block->getContactNumber()) ?></span></label>
+            <div class="control">
+                <input name="phone" id="phone" title="<?php /* @escapeNotVerified */ echo __($block->getContactNumber()) ?>" value="<?php echo $form_data['phone']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?php /* @escapeNotVerified */ echo __($block->getEmail()) ?></span></label>
+            <div class="control">
+                <input name="email" id="email" title="<?php /* @escapeNotVerified */ echo __($block->getEmail()) ?>" value="<?php echo $form_data['email']; ?>" class="input-text" type="email" data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>        
+        <?php if ($block->getVatNumberHide()) : ?>
+        <div class="field">
+            <label class="label" for="taxvat"><span><?php /* @escapeNotVerified */ echo __($block->getVatNumber()) ?></span></label>
+            <div class="control">
+                <input name="taxvat" id="taxvat" title="<?php /* @escapeNotVerified */ echo __($block->getVatNumber()) ?>" value="<?php echo $form_data['taxvat']; ?>" class="input-text" type="text" data-validate="{required:false}"/>
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php if ($block->getAddressHide()) : ?>
+            <div class="field comment required">
+                <label class="label" for="address"><span><?php /* @escapeNotVerified */ echo __($block->getAddress()) ?></span></label>
+                <div class="control">
+                    <textarea name="address" id="address" title="<?php /* @escapeNotVerified */ echo __($block->getAddress()) ?>" class="input-text" cols="5" rows="3" data-validate="{required:true}"></textarea>
+                </div>
+            </div>
+        
+     
+        <div class="field required">
+            <label class="label" for="city"><span><?php /* @escapeNotVerified */ echo __($block->getCity()) ?></span></label>
+            <div class="control">
+                <input name="city" id="city" title="<?php /* @escapeNotVerified */ echo __($block->getCity()) ?>" value="<?php echo $form_data['city']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+       
+        <div class="field required">
+            <label class="label" for="zip"><span><?php /* @escapeNotVerified */ echo __($block->getZip()) ?></span></label>
+            <div class="control">
+                <input name="zip" id="zip" title="<?php /* @escapeNotVerified */ echo __($block->getZip()) ?>" value="<?php echo $form_data['zip']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+        
+        <div class="field required">
+            <label class="label" for="country"><span><?php /* @escapeNotVerified */ echo __($block->getCountry()) ?></span></label>
+            <div class="control">
+                <select name="country" id="country" class="drop" class="input-text required-entry" data-validate="{required:true}">
+                    <?php
+                        $country = $block->getCountryDropDown();
+                    foreach ($country as $country) {
+                    ?>
+                    <option value="<?php echo $country['value']; ?>" <?php if ($form_data['country']==$country['value']) {
+                        echo "selected";
+}?>><?php echo $country['label']; ?></option>
+                    <?php
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+            
+            <div class="field required">
+                <label class="label" for="state"><span><?php /* @escapeNotVerified */ echo __($block->getState()) ?></span></label>
+               
+                    <div id="state_div" class="control">
+                        <?php if (isset($form_data['state'])) : ?>
+                            <?php $statearray = $block->getStateFromCountry($form_data['country']); ?>
+                            
+                            <?php
+                            if (!empty($statearray)) {
+                                ?>
+                                <select id='state' name='state' class='drop' class='input-text required-entry' data-validate='{required:true}'><option value=''>--Please Select--</option>";
+                                <?php
+                                foreach ($statearray as $_state) {
+                                    if ($_state['value']) {
+                                        ?>
+                                        <option value="<?php echo $_state['value']; ?>" <?php if ($form_data['state']==$_state['value']) {
+                                            echo "selected";
+}?>><?php echo $_state['label']; ?></option>
+                                            <?php
+                                    }
+                                }
+                                ?>
+                                </select>
+                                <?php
+                            } else { ?>
+                                    <input name="state" id="state" title="<?php /* @escapeNotVerified */ echo __($block->getState()) ?>" value="<?php echo $form_data['state']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                                <?php
+                            }
+                            ?>
+                            
+                        <?php else : ?>
+                            <input name="state" id="state" title="<?php /* @escapeNotVerified */ echo __($block->getState()) ?>" value="<?php echo $form_data['state']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            
+        <div class="field telephone required">
+            <label class="label" for="telephone"><span><?php /* @escapeNotVerified */ echo __($block->getContactNumber()) ?></span></label>
+            <div class="control">
+                <input name="phone" id="phone" title="<?php /* @escapeNotVerified */ echo __($block->getContactNumber()) ?>" value="<?php echo $form_data['phone']; ?>" class="input-text" type="text" data-validate="{required:true}"/>
+            </div>
+        </div>
+		 <?php endif; ?>
+        <?php if ($block->getWebsiteHide()) :?>
+        <div class="field">
+            <label class="label" for="website"><span><?php /* @escapeNotVerified */ echo __($block->getWebsite()) ?></span></label>
+            <div class="control">
+                <input name="website" id="website" title="<?php /* @escapeNotVerified */ echo __($block->getWebsite()) ?>" value="<?php echo $form_data['website']; ?>" class="input-text" type="text" />
+            </div>
+        </div>
+        <?php endif; ?>
+        <div class="field required">
+            <label class="label" for="business_desc"><span><?php /* @escapeNotVerified */ echo __($block->getDescription()) ?></span></label>
+            <div class="control">
+                <textarea name="bus_desc" id="bus_desc" title="<?php /* @escapeNotVerified */ echo __($block->getDescription()) ?>" class="input-text" data-validate="{required:true}"><?php echo trim($form_data['bus_desc']); ?></textarea>
+            </div>
+        </div>
+        <?php if ($block->getDateTimeHide()) :?>
+        <div class="field">
+            <label class="label" for="date_time"><span><?php /* @escapeNotVerified */ echo __($block->getDateTime()) ?></span></label>
+            <div class="control">
+                <input name="date_time" id="date_time" title="<?php /* @escapeNotVerified */ echo __($block->getDateTime()) ?>" value="<?php echo $form_data['date_time']; ?>" class="input-text date_time_picker" type="text" placeholder="dd/mm/yyyy HH:MM" />
+            </div>
+        </div>
+        <script>
+        require([
+            "jquery",
+            "mage/calendar"
+        ], function($){
+
+            $("#date_time").calendar({
+                showsTime: true,
+                dateFormat: "dd-mm-yyyy"
+            });
+        });
+        </script>
+        <?php endif; ?>
+                
+        <?php if ($block->getUploadFileHide()) :?>
+        <div class="field">
+            <label class="label" for="upload_file"><span><?php /* @escapeNotVerified */ echo __($block->getUploadFile()) ?></span></label>
+            <div class="control" id="uploadFile_div">
+                <input name="upload_file[]" id="upload_file" title="<?php /* @escapeNotVerified */ echo __($block->getUploadFile()) ?>" class="input-text" type="file" multiple />
+                <a id="clearfile" onclick="clearFileInputField('uploadFile_div')" href="javascript:void(0);"><?php echo __("Clear Uploaded File");?></a>
+            </div>
+        </div>
+        <?php endif; ?>
+        
+        <?php if ($block->getExtraOneHide()) :?>
+        <div class="field exclude">
+            <label class="label" for="extra_one"><span><?php /* @escapeNotVerified */ echo __($block->getExtraOne()) ?></span></label>
+            <div class="control">
+                <input type="radio" name="extra_one" class="" value="$100k-$500k" />
+                    <span><?php echo __("$100k-$500k") ?></span>
+                <input type="radio" name="extra_one" class="" value="$500k-$1M" />
+                    <span><?php echo __("$500k-$1M") ?></span>
+                <input type="radio" name="extra_one" class="" value="$1M-$3M" />
+                    <span><?php echo __("$1M-$3M") ?></span>
+                <input type="radio" name="extra_one" class="" value="$3M+" />
+                    <span><?php echo __("$3M+") ?></span>
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php if ($block->getExtraTwoHide()) :?>
+        <div class="field">
+            <label class="label" for="extra_two"><span><?php /* @escapeNotVerified */ echo __($block->getExtraTwo()) ?></span></label>
+            <div class="control">
+                <select name="extra_two">
+                    <option value="-1"><?php echo __("Please Select..") ?></option>
+                    <option value="less than 20%"><?php echo __("less than 20%") ?></option>
+                    <option value="20%-50%"><?php echo __("20%-50%") ?></option>
+                    <option value="more than 50%"><?php echo __("more than 50%") ?></option>
+                </select>
+            </div>
+        </div>
+        <?php endif; ?>
+        <?php if ($block->getExtraThreeHide()) :?>
+            <div class="field exclude">
+                <label class="label" for="extra_three"><span><?php /* @escapeNotVerified */ echo __($block->getExtraThree()) ?></span></label>
+                <div class="control">
+                    <input type="checkbox" name="extra_three[]" class="" value="DWR" />
+                        <span><?php echo __("DWR") ?></span>
+                    <input type="checkbox" name="extra_three[]" class="" value="Room and Board" />
+                        <span><?php echo __("Room and Board") ?></span>
+                    <input type="checkbox" name="extra_three[]" class="" value="Knoll" />
+                        <span><?php echo __("Knoll") ?></span>
+                    <input type="checkbox" name="extra_three[]" class="" value="BoConcepts" />
+                        <span><?php echo __("BoConcepts") ?></span>
+                    <input type="checkbox" name="extra_three[]" class="" value="Other" />
+                        <span><?php echo __("Other") ?></span>
+                </div>
+            </div>
+            <div class="field other_supplier" style="display:none">
+                <label class="label" for="other_supplier"><span><?php echo __("Other Supplier") ?></span></label>
+                <div class="input-box">
+                    <input type="text" name="other_supplier" size="45" class="input-text" />
+                </div>
+            </div>
+        <?php endif; ?>
+        <div class="field">
+            <label class="label" for="replicas_in_your_projects"><span><?php echo __("Do you utilize modern replicas in your projects?") ?></span></label>
+            <div class="control">
+                <select name="replicas_in_your_projects">
+                    <option value="0"><?php echo __("No") ?></option>
+                    <option value="1"><?php echo __("Yes") ?></option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="com_and_col_in_your_projects"><span><?php echo __("Do you use COM and COL in your projects?") ?></span></label>
+            <div class="control">
+                <select name="com_and_col_in_your_projects">
+                    <option value="0"><?php echo __("No") ?></option>
+                    <option value="1"><?php echo __("Yes") ?></option>
+                </select>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label" for="may_we_contact"><span><?php echo __("May we contact you (or contact person above) for an introduction to our services?") ?></span></label>
+            <div class="control">
+                <select name="may_we_contact">
+                    <option value="0"><?php echo __("No") ?></option>
+                    <option value="1"><?php echo __("Yes") ?></option>
+                </select>
+            </div>
+        </div>
+        <div class="field multiple">
+            <label class="label"><span><?php echo __("Who is the contact person for vendors?") ?></span></label>
+            <div class="control">
+                <label class="label" for="contact_person_for_vendors_name"><span><?php echo __("Name") ?></span></label>
+                <input type="text" name="contact_person_for_vendors_name" class="input-text" />
+            </div>
+            <div class="control">
+                <label class="label" for="contact_person_for_vendors_email"><span><?php echo __("Email") ?></span></label>
+                <input type="text" name="contact_person_for_vendors_email" class="input-text validate-email" />
+            </div>
+        </div>
+        <?php //CAPTCHA STARTS ?>
+        <?php if ($block->isCaptchaEnable()) : ?>
+        <div class="field required exclude">
+            <label class="label" for="captcha"><span><?php /* @escapeNotVerified */ echo __($block->getCaptcha()) ?></span>
+            </label>
+            <div class="control captcha">
+            <?php $image_name = $helper->createCaptchaImage(); ?>
+                <img src="<?php echo $helper->getImgUrl().$image_name ;?>" id="captcha_image" />
+                <img src="<?php echo $block->getViewFileUrl('Magebees_DealerInquiry::images/refresh.png'); ?>" id="captcha_refresh" />
+                <!--<img src="<?php //echo $block->getViewFileUrl('Magebees_DealerInquiry::images/refresh.png'); ?>" onclick="refresh()" id="captcha_refresh" />-->
+                <input name="captcha" id="captcha" title="<?php /* @escapeNotVerified */ echo __($block->getCaptcha()) ?>" value="" class="input-text" type="text" data-validate="{required:true}" />
+            </div>
+       </div>
+       <?php endif; ?>
+       <?php //CAPTCHA ENDS ?>
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button type="submit" title="<?php /* @escapeNotVerified */ echo __($block->getBtnTxt()) ?>" class="action submit primary">
+                    <span><?php /* @escapeNotVerified */ echo __($block->getBtnTxt()) ?></span>
+                </button>
+            </div>
+        </div>
+    </fieldset>
+    
+</form>

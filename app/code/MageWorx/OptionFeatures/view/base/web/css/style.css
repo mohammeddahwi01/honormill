@@ -1,0 +1,10 @@
+.option-description-text {
+    font-size: 0.75em;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.qtip {
+    font-size: 12.5px;
+    line-height: 14px;
+}

@@ -1,0 +1,10 @@
+<?php
+/** @var $block \Magebees\DealerInquiry\Block\InquiryLink */
+?>
+<?php if ($block->isEnable()) : ?>
+<li class="inquiry_link">
+    <a href="<?php /* @escapeNotVerified */ echo $block->getHref(); ?>" >
+        <?php echo $block->escapeHtml($block->getLabel()); ?>
+    </a>
+</li>
+<?php endif; ?>

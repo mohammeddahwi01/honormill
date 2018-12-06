@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Installation -->
+    <type name="MageWorx\OptionBase\Model\Installer">
+        <arguments>
+            <argument name="installSchema" xsi:type="array">
+                <item name="optionswatches_install_schema_data" xsi:type="object">MageWorx\OptionSwatches\Model\InstallSchema</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- Plugins -->
+    <type name="Magento\Catalog\Block\Product\View\Options\Type\Select">
+        <plugin name="aroundGetValuesHtml" type="MageWorx\OptionSwatches\Plugin\Product\View\Options\Type\Select" sortOrder="10" disabled="false"/>
+    </type>
+    <!-- Data -->
+    <type name="MageWorx\OptionBase\Model\Product\Option\Attributes">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item name="is_swatch" xsi:type="object">MageWorx\OptionSwatches\Model\Attribute\Option\IsSwatch</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,36 @@
+<?php
+/**
+ * Copyright © 2018 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<?php echo $this->getButtonsHtml(); ?>
+
+<div id="sphinx_search" class="sphinx-message message message-<?php echo $block->getStatus()?>">
+    <?php echo $block->getMessage() ?>
+</div>
+
+<script type="text/javascript">
+    function sphinxSearchAction(btn, url){
+        jQuery.ajax({
+            type:"get",
+            dataType: "json",
+            showLoader: true,
+            url: url,
+            success:
+                function(r){
+                    if(r.status){
+                        jQuery("#sphinx_search").removeClass("message-error");
+                        jQuery("#sphinx_search").addClass("message-success");
+                    } else {
+                        jQuery("#sphinx_search").removeClass("message-success");
+                        jQuery("#sphinx_search").addClass("message-error");
+                    }
+                    jQuery("#sphinx_search").html(
+                        "<div>"+ r.msg + "</div>"
+                    ).css("display", "block");
+                }
+        });
+    }
+</script>

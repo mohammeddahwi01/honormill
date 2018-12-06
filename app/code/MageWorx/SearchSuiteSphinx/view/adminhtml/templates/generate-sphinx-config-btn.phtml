@@ -1,0 +1,33 @@
+<?php
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+?>
+
+<?php echo $this->getButtonHtml(); ?>
+
+<div id="sphinx_generate_config" class="sphinx-message sphinx-message_hide message"></div>
+
+<script type="text/javascript">
+    function checkFileGeneration(btn, url){
+        jQuery.ajax({
+            type:"get",
+            dataType: "json",
+            url: url,
+            success:
+                function(r){
+                    if(r.status){
+                        jQuery("#sphinx_generate_config").removeClass("message-error");
+                        jQuery("#sphinx_generate_config").addClass("message-success");
+                    } else {
+                        jQuery("#sphinx_generate_config").removeClass("message-success");
+                        jQuery("#sphinx_generate_config").addClass("message-error");
+                    }
+                    jQuery("#sphinx_generate_config").html(
+                        "<div>"+ r.msg + "</div>"
+                    ).css("display", "block");
+                }
+        });
+    }
+</script>

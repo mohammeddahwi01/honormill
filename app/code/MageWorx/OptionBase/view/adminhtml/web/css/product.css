@@ -1,0 +1,41 @@
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+
+#product_options_container .data-table tbody > tr {
+    height: 150px;
+}
+
+#product_options_container .data-table tbody tr > td {
+    vertical-align: top;
+}
+
+#product_options_container .data-table .mageworx-optionbase {
+    position: absolute;
+    left: 0;
+    margin-top: 60px;
+    width: 99%;
+}
+
+#product_options_container .data-table .mageworx-optionbase thead {
+    border-bottom: 1px solid rgba(255, 220, 0, 0.45);
+}
+
+#product_options_container .data-table .mageworx-optionbase tr {
+    height: inherit;
+}
+
+#product_options_container .data-table .mageworx-optionbase tr th,
+#product_options_container .data-table .mageworx-optionbase tr td {
+    width: 15%;
+    background-color: #fffede;
+}
+
+.admin__fieldset > .apo-admin__field-widened > .admin__field-control {
+    width: calc( (100%) * 0.75 - 30px );
+}
+
+.bottom-pager {
+    margin-top: 10px;
+}

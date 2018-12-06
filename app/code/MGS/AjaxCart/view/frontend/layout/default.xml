@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.bottom">
+            <block class="MGS\AjaxCart\Block\Source\Actions" name="mgs.ajaxcart.actions" template="MGS_AjaxCart::actions.phtml" />
+            <block class="MGS\AjaxCart\Block\Source\Config" name="mgs.ajaxcart.config" template="MGS_AjaxCart::config.phtml" />
+        </referenceContainer>
+    </body>
+</page>

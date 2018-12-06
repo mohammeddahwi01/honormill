@@ -1,0 +1,27 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$basePath = $block->getBaseUrl();
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+$cmsPages = $block->getAllCmsPages();
+/*echo "<pre>";
+get_class($block);
+echo "</pre>";*/
+?>
+	<div class="cmspages-container-inner">
+		<h3 class="section-title">CMS Page</h3>
+		<ul class="cms-page-list">
+
+		<?php foreach($cmsPages as $page): ?>
+			<li class="cms-item">
+				<a href="<?php echo $basePath . $page['link_url']; ?>" title="<?php echo $page['title']; ?>"><?php echo $page['title']; ?></a>
+			</li>
+		<?php endforeach; ?>
+
+		<?php if($sitemapHelper->isContactPageEnabled()) : ?>
+			<li class="cms-item">
+				<a href="<?php echo $basePath; ?>contact" title="<?php echo __('Contact Us'); ?>"><?php echo __('Contact Us'); ?></a>
+			</li>
+		<?php endif;?>
+		</ul>
+
+	</div>

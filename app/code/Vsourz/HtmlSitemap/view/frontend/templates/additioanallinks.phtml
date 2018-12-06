@@ -1,0 +1,31 @@
+<?php
+$sitemapHelper = $this->helper('Vsourz\HtmlSitemap\Helper\Data');
+$customlinks = $sitemapHelper->getCustomLinks();
+$links = explode(';',trim($customlinks,';'));
+
+array_unique($links);
+
+if(!empty($links)){
+$linkset = array();
+	foreach ($links as $k => $p) {
+	    $i = explode(',',$p);
+    	if(isset($i['0']) && $i['0'] != null && isset($i['1']) && $i['1'] != null){
+    	   $linkset[$k]['linkurl'] = $i['0'];
+    	   $linkset[$k]['linktext'] = $i['1'];
+    	}
+	}
+?>
+	<?php if(!empty($links) && is_array($linkset) && !empty($linkset)) : ?>
+		<div class="cmspages-container-inner">
+			<h3 class="section-title"><?php echo __('Additional Links') ?></h3>
+			<ul class="cms-page-list">
+			<?php // array_filter($linkset);
+			foreach ($linkset as $link): ?>
+				<li class="cms-item">
+					<a href="<?php echo $link['linkurl']; ?>" title="<?php echo $link['linktext']; ?>"><?php echo $link['linktext']; ?></a>
+				</li>
+			<?php endforeach; ?>
+			</ul>
+		</div>
+	<?php endif; ?>
+<?php } ?>

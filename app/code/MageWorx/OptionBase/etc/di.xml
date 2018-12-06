@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Plugins -->
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="mageworx_optionbase_collect_product_option_conditions"
+                type="MageWorx\OptionBase\Plugin\CollectProductOptionConditions"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Option\Repository">
+        <plugin name="mageworx_optionbase_collect_enterprise_product_conditions"
+                type="MageWorx\OptionBase\Plugin\CollectEnterpriseProductConditions"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Collection">
+        <plugin name="mageworx_optionbase_extend_product_collection"
+                type="MageWorx\OptionBase\Plugin\ExtendProductCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Collection">
+        <plugin name="mageworx_optionbase_extend_option_collection"
+                type="MageWorx\OptionBase\Plugin\ExtendOptionCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option\Value\Collection">
+        <plugin name="mageworx_optionbase_extend_option_value_collection"
+                type="MageWorx\OptionBase\Plugin\ExtendOptionValueCollection"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+
+    <type name="Magento\Catalog\Block\Product\View\Options">
+        <plugin name="mageworx_optionbase_around_options_html"
+                type="MageWorx\OptionBase\Plugin\AroundOptionsHtml"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\View\Options\Type\Select">
+        <plugin name="mageworx_optionbase_around_option_values_html"
+                type="MageWorx\OptionBase\Plugin\AroundOptionValuesHtml"
+                sortOrder="5"
+                disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Model\Product\Option\Type\DefaultType">
+        <plugin name="mageworx_optionbase_validate_add_to_cart"
+                type="MageWorx\OptionBase\Plugin\ValidateAddToCart"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+    <type name="Magento\Catalog\Model\Product\Type\AbstractType">
+        <plugin name="mageworx_optionbase_validate_cart_checkout"
+                type="MageWorx\OptionBase\Plugin\ValidateCartCheckout"
+                sortOrder="10"
+                disabled="false"
+        />
+    </type>
+    <type name="Magento\Catalog\Model\Product">
+        <plugin name="mageworx_optiontemplates_is_require_checker_aftersave"
+                type="MageWorx\OptionBase\Plugin\IsRequireChecker"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
+</config>

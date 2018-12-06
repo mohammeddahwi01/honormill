@@ -1,0 +1,37 @@
+<?php
+$name='OldStandardTT-Bold';
+$type='TTF';
+$desc=array (
+  'CapHeight' => 712.0,
+  'XHeight' => 474.0,
+  'FontBBox' => '[-868 -294 1392 1119]',
+  'Flags' => 262148,
+  'Ascent' => 762.0,
+  'Descent' => -238.0,
+  'Leading' => 236.0,
+  'ItalicAngle' => 0.0,
+  'StemV' => 165.0,
+  'MissingWidth' => 500.0,
+);
+$unitsPerEm=1000;
+$up=-75;
+$ut=50;
+$strp=284;
+$strs=50;
+$ttffile='/var/www/html/pub/honormill/app/code/PluginCompany/ProductPdf/view/base/googlefonts//oldstandardtt/OldStandard-Bold.ttf';
+$TTCfontID='0';
+$originalsize=267128;
+$sip=false;
+$smp=false;
+$BMPselected=false;
+$fontkey='oldstandardttB';
+$panose=' 0 0 0 0 8 0 0 0 0 0 0 0';
+$haskerninfo=false;
+$haskernGPOS=false;
+$hassmallcapsGSUB=false;
+$fontmetrics='win';
+// TypoAscender/TypoDescender/TypoLineGap = 762, -238, 236
+// usWinAscent/usWinDescent = 948, -282
+// hhea Ascent/Descent/LineGap = 762, -238, 236
+$useOTL=0x0000;
+$rtlPUAstr='';

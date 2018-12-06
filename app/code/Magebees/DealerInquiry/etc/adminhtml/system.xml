@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magebees" translate="label" sortOrder="100">
+            <label>MageBees</label>
+        </tab>
+        <section id="inquiry" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Dealer Inquiry</label>
+            <tab>magebees</tab>
+            <resource>Magebees_DealerInquiry::configuration_settings</resource>
+			<group id="settings" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Settings</label>
+				<field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Enabled</label> 
+					<comment><![CDATA[Select Yes for display the Dealer inquiry on frontend.]]></comment> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="url_key" translate="label comment" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>URL Key</label> 
+					<comment><![CDATA[Relative to Website Base URL.]]></comment>
+				</field>
+				<field id="enable_link" translate="label comment" type="select" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Enabled Top Link</label> 
+					<comment><![CDATA[Select Yes for display the Dealer inquiry top link on frontend.]]></comment> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="link_label" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Top Link Label</label> 
+					<comment><![CDATA[Here, We can Set Dealer inquiry Top Link Label.]]></comment>
+					<depends>
+                    	<field id="enable_link">1</field>
+                	</depends>
+				</field>
+				<field id="page_layout" translate="label comment" type="select" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Page Layout</label> 
+					<comment><![CDATA[Here, We can Set Dealer inquiry Page Layout.]]></comment> 
+					<source_model>Magebees\DealerInquiry\Model\PageLayout</source_model> 
+				</field>
+				<field id="display_heading" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Display Heading</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+					<comment><![CDATA[Select Yes for display the Dealer inquiry Heading on form.]]></comment>
+				</field>
+				<field id="heading" translate="label comment" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Heading</label> 
+					<comment><![CDATA[Here, We can Set Dealer inquiry Form title.]]></comment>
+					<depends>
+                    	<field id="display_heading">1</field>
+                	</depends>
+				</field>
+				
+				<field id="meta_title" translate="label comment" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Meta Title</label> 
+					<comment><![CDATA[Here, We can Set Dealer inquiry Page title.]]></comment>
+				</field>
+				<field id="meta_description" translate="label comment" type="textarea" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Meta Description</label> 
+					<comment><![CDATA[]]></comment>
+				</field>
+				<field id="meta_keywords" translate="label comment" type="textarea" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Meta Keywords</label> 
+					<comment><![CDATA[]]></comment>
+				</field>
+				<field id="description" translate="label comment" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Description</label> 
+					<comment><![CDATA[This text will appear under the Dealer inquiry Form title.]]></comment>
+				</field>
+				<field id="submit_label" translate="label comment" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Submit Button Label</label> 
+					<comment><![CDATA[Set text for the submit button of the form.]]></comment>
+				</field>
+				<field id="success_message" translate="label comment" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Success Message</label> 
+					<comment><![CDATA[This text will be displayed after successfully submit form.]]></comment>
+				</field>
+				<field id="customer_group" translate="label comment" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Customer group for create customer</label>
+					<source_model>Magebees\DealerInquiry\Model\Customergroup</source_model>
+					<comment><![CDATA[Choose customer type from here for create different type of customer from Dealer Manager.]]></comment>
+				</field>
+			</group>
+			<group id="admin_email" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dealer Inquiry Owner Email Template</label>
+				<comment>After submit dealer inquiry form Owner get email notification so you can set Email Subject and Email template here. </comment>
+				<field id="subject" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subject</label>
+				</field>
+				<field id="email_template" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+				<field id="send_to" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Send to</label>
+					<source_model>Magebees\DealerInquiry\Model\Ownermail</source_model>
+				</field>
+				<field id="owner_email" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Owner Email</label>
+					<depends>
+                    	<field id="send_to">custom</field>
+                	</depends>
+				</field>
+            </group>
+			<group id="customer_email" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Dealer Inquiry Customer Email Template</label>
+				<comment>After submit dealer inquiry form customer get email notification so you can set Email Subject and Email template here. </comment>
+				<field id="subject" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subject</label>
+				</field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+			<group id="create_account" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Create Customer Email Template</label>
+				<comment>When admin click on create customer button. Customer get email notification of his username and password. So for that email you can set email Subject and email template here.</comment>
+				<field id="subject" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subject</label>
+				</field>
+                <field id="email_template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+					<source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+            </group>
+			<group id="change_label" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Change Label of Fields</label>
+				<field id="first_name" translate="label comment" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>First Name</label> 
+					<validate>required</validate>
+				</field>  
+				<field id="last_name" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Last Name</label> 
+					<validate>required</validate>
+				</field> 
+				<field id="company_name" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Company Name</label> 
+					<validate>required</validate>
+				</field> 
+				<field id="vat_number" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Tax/VAT Number</label> 
+					<validate>required</validate>
+				</field>
+				<field id="address" translate="label comment" type="text" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Street Address</label> 
+					<validate>required</validate>
+				</field>
+				<field id="city" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>City</label> 
+					<validate>required</validate>
+				</field>
+				<field id="state" translate="label comment" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>State</label> 
+					<validate>required</validate>
+				</field>
+				<field id="country" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Country</label> 
+					<validate>required</validate>
+				</field>
+				<field id="zip" translate="label comment" type="text" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>ZIP / Postal Code</label> 
+					<validate>required</validate>
+				</field>
+				<field id="contact_number" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Contact Number</label> 
+					<validate>required</validate>
+				</field>
+				<field id="email" translate="label comment" type="text" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Email</label> 
+					<validate>required</validate>
+				</field>
+				<field id="website" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Website</label> 
+					<validate>required</validate>
+				</field>
+				<field id="description" translate="label comment" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Description</label> 
+					<validate>required</validate>
+				</field>
+				<field id="date_time" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Date Time</label> 
+					<validate>required</validate>
+				</field>
+				<field id="upload_file" translate="label comment" type="text" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Upload Files</label> 
+					<validate>required</validate>
+				</field>
+				<field id="extra_one" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Extra Field 1</label> 
+					<validate>required</validate>
+				</field>
+				<field id="extra_two" translate="label comment" type="text" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Extra Field 2</label> 
+					<validate>required</validate>
+				</field>
+				<field id="extra_three" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Extra Filed 3</label> 
+					<validate>required</validate>
+				</field>
+				<field id="captcha" translate="label comment" type="text" sortOrder="95" showInDefault="1" showInWebsite="1" showInStore="1" > 
+					<label>Captcha</label> 
+					<validate>required</validate>
+				</field>
+			</group>
+			<group id="label_hide" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Show/Hide Fields</label>
+				<field id="vat_number" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Tax/VAT Number</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="address" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Address Fields</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="website" translate="label comment" type="select" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Website</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="date_time" translate="label comment" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Date Time</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field><field id="upload_file" translate="label comment" type="select" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Upload File</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="file_ext" translate="label comment" type="text" sortOrder="56" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Allowed File Types</label>
+					<depends>
+						<field id="upload_file">1</field>
+					</depends>					
+					<comment><![CDATA[Add comma separated file extensions
+(for e.g. jpeg,jpg,png)]]></comment> 
+				</field>
+				<field id="extra_one" translate="label comment" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Extra Field 1</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="extra_two" translate="label comment" type="select" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Extra Filed 2</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="extra_three" translate="label comment" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Extra Filed 3</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+				<field id="captcha" translate="label comment" type="select" sortOrder="75" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Captcha</label> 
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model> 
+				</field>
+			</group>
+			<group id="support" translate="label" type="text" sortOrder="999" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Info</label>
+				<field id="style" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1"> 
+					<label>Info</label> 
+					<frontend_model>Magebees\DealerInquiry\Block\Adminhtml\System\Config\Support</frontend_model>
+				</field>
+			</group>
+		</section>
+    </system>
+</config>

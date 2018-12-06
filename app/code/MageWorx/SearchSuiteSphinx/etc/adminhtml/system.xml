@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mageworx" sortOrder="2001">
+            <label>MageWorx</label>
+        </tab>
+        <section id="mageworx_searchsuite" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Search Suite</label>
+            <tab>mageworx</tab>
+            <resource>MageWorx_SearchSuiteSphinx::config_searchsuitesphinx</resource>
+            <group id="searchsuitesphinx_main" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sphinx Configuration</label>
+                <field id="run" translate="label comment" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Sphinx Search Actions]]></label>
+                    <frontend_model>MageWorx\SearchSuiteSphinx\Block\Adminhtml\System\Config\SphinxActions</frontend_model>
+                </field>
+                <field id="host" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Sphinx Host]]></label>
+                    <comment><![CDATA[Default host: 127.0.0.1]]></comment>
+                </field>
+                <field id="port" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Sphinx Port]]></label>
+                    <comment><![CDATA[Default port: 9312]]></comment>
+                </field>
+                <field id="sql_port" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Sql Port]]></label>
+                    <comment><![CDATA[Default sql port: 3306]]></comment>
+                </field>
+                <field id="index_path" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Path to Index]]></label>
+                    <comment><![CDATA[Default path var/mageworx_sphinxsearch/]]></comment>
+                </field>
+                <field id="log_files_path" translate="label comment" type="text" sortOrder="80" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Path to Search Logs]]></label>
+                    <comment><![CDATA[Default path var/mageworx_sphinxsearch/]]></comment>
+                </field>
+                <field id="binlog_files_path" translate="label comment" type="text" sortOrder="90" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Path to Sphinx Logs]]></label>
+                    <comment><![CDATA[Default path var/mageworx_sphinxsearch/]]></comment>
+                </field>
+                <field id="generate" translate="label comment" sortOrder="100" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label><![CDATA[Generate Sphinx Config]]></label>
+                    <frontend_model>MageWorx\SearchSuiteSphinx\Block\Adminhtml\System\Config\Generate</frontend_model>
+                    <comment><![CDATA[Save the settings prior to generating a file.]]></comment>
+                </field>
+                <field id="timeout" translate="label comment" type="text" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Connection Timeout]]></label>
+                </field>
+                <field id="max_product_count_in_delta" translate="label comment" type="text" sortOrder="125" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Max Product Number In Delta Index]]></label>
+                    <comment><![CDATA[This setting used only in case Sphinx Reindex set to 'Update on save' and affects the speed of product saving. <br> Recommended to set this value about 10% of all products count.]]></comment>
+                </field>
+                <field id="ranking_mode" translate="label comment" type="select" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Search Results Ranker]]></label>
+                    <source_model>MageWorx\SearchSuiteSphinx\Model\System\Config\Source\RankingMode</source_model>
+                </field>
+                <field id="match_mode" translate="label comment" type="select" sortOrder="140" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label><![CDATA[Matching Mode]]></label>
+                    <source_model>MageWorx\SearchSuiteSphinx\Model\System\Config\Source\MatchMode</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

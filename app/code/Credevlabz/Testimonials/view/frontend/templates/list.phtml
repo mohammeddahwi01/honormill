@@ -1,0 +1,113 @@
+<?php
+ /*
+ * @var $block \Credevlabz\Testimonials\Block\TestimonialsList 
+ * @package Credevlabz/Testimonials
+ * @author Aman Srivastava <http://amansrivastava.in>
+ */ 
+?>
+
+<div class="testimonials-post-list">
+    <?php /** @var $testimonial \Credevlabz\Testimonials\Model\Testimonial */ ?>
+    <div id="mb_owl-testimonial">
+        <?php foreach ($block->getTestimonials() as $testimonial): ?>
+            <div class="item containerr testimonial-list-item well">
+                    <div class="testimonial-item-heading"">
+                        <h1>
+                            <?php echo $testimonial->getTestimonialHeading(); ?>
+                        </h1>
+                    </div>
+                    <div class="testimonial-item-content">
+                        <?php echo $testimonial->getContent(); ?>
+                    </div>
+                <div class="testimonial-item-meta">
+                    <?php echo __('- ') ?>
+                    <strong class="post-by"><?php echo $testimonial->getName() ?></strong>
+                    <span class="title"><?php echo $testimonial->getTitle() ?></span>
+                    <?php echo __(' @ ') ?>
+                    <span class="company"><?php echo $testimonial->getCompany() ?></span>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<script type="text/javascript">
+    require(['jquery', 'OwlCarousel'], function () {
+        jQuery(document).ready(function () {
+            jQuery("#mb_owl-testimonial").owlCarousel({
+                autoPlay: 5000, //Set AutoPlay to 5 seconds
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut',
+                items : 1,
+                itemsDesktop : [1199,1],
+                itemsDesktopSmall : [979,1],
+                itemsCustom : [
+                    [0, 1],
+                    [450, 1],
+                    [600, 1],
+                    [700, 1],
+                    [1000, 1],
+                    [1200, 1],
+                    [1400, 1],
+                    [1600, 1]
+                ],
+            });
+        });
+    });
+</script>
+<style type="text/css">
+    .testimonials-post-list .owl-theme .owl-controls {margin: 50px 0}
+    .testimonials-post-list .owl-theme .owl-controls .owl-page span {
+        background-color: transparent;
+        border: 2px solid #999;
+        width: 18px;
+        height: 18px;
+    }
+    .testimonials-post-list .owl-theme .owl-controls .owl-page.active span {
+        background-color: #999;
+    }
+    .testimonials-post-list .testimonial-list-item, .testimonials-post-list .testimonial-list-item * {
+        text-align: center;
+    }
+    .testimonials-post-list .testimonial-list-item * {
+        font-family: 'Open Sans', serif;
+        font-weight: 300;
+        font-size: 18px;
+        color: #333;
+    }
+    .testimonials-post-list .testimonial-item-heading h1 {
+        font-size: 35px;
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+    .testimonials-post-list .testimonial-item-meta {
+        margin-top: 30px;
+    }
+    .testimonials-post-list .testimonial-item-meta strong {
+        font-weight: 400;        
+    }
+    .testimonials-post-list .testimonial-item-meta *:not(strong) {
+        font-style: italic;
+    }
+    .testimonials-post-list .testimonial-list-item {margin: 0 auto}
+    .testimonials-index-index #maincontent.page-main {max-width: 100%; padding: 0 0 60px 0}
+    .testimonials-index-index #maincontent.page-main .columns {background-color: #eee; padding: 0}
+    .testimonials-index-index .category-view.trade-contract-top {
+        margin-bottom: 50px;
+    }
+    .testimonials-index-index .page-title-wrapper {display: none;}
+    .testimonials-index-index .wrapper-breadcrums {z-index: 1; }
+    .testimonials-index-index .wrapper-breadcrums .breadcrumbs .items {padding: 20px 0 0}
+    .testimonials-index-index .wrapper-breadcrums .breadcrumbs .items a, .testimonials-index-index .wrapper-breadcrums .breadcrumbs .items strong {color: #fff; }
+    .testimonials-index-index .wrapper-breadcrums .breadcrumbs .item:not(:last-child):after {
+        content: "/"; color: #fff;
+    }
+    .testimonials-index-index .testimonial-bottom-block {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    @media only screen and (min-width: 768px) {
+        .testimonials-post-list .testimonial-list-item {max-width: 55%;}
+    }
+</style>

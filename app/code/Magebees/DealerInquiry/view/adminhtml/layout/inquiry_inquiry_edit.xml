@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="editor"/>
+	<body>
+		<referenceContainer name="content">
+			<block class="Magebees\DealerInquiry\Block\Adminhtml\Inquiry\Edit" name="inquiry_edit"/>
+		</referenceContainer>
+		<referenceContainer name="left">
+			<block class="Magebees\DealerInquiry\Block\Adminhtml\Inquiry\Edit\Tabs" name="inquiry_edit_tabs">
+				<block class="Magebees\DealerInquiry\Block\Adminhtml\Inquiry\Edit\Tab\Inquiryinfo" name="inquiry_edit_tab_inquiryinfo"/>
+					<action method="addTab">
+						<argument name="name" xsi:type="string">inquiry_tabs</argument>
+						<argument name="block" xsi:type="string">inquiry_edit_tab_inquiryinfo</argument>
+					</action>
+			</block>
+		</referenceContainer> 
+	</body>
+</page>

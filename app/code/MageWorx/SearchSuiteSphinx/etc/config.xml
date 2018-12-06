@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mageworx_searchsuite>
+            <searchsuitesphinx_main>
+                <host>127.0.0.1</host>
+                <port>9312</port>
+                <sql_port>3306</sql_port>
+                <index_path>var/mageworx_sphinxsearch/</index_path>
+                <pid_file_path>var/mageworx_sphinxsearch/</pid_file_path>
+                <log_files_path>var/mageworx_sphinxsearch/</log_files_path>
+                <binlog_files_path>var/mageworx_sphinxsearch/</binlog_files_path>
+                <timeout>30</timeout>
+                <ranking_mode>0</ranking_mode>
+                <match_mode>4</match_mode>
+                <max_product_count_in_delta>1000</max_product_count_in_delta>
+            </searchsuitesphinx_main>
+        </mageworx_searchsuite>
+    </default>
+</config>

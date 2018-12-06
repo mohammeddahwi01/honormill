@@ -1,0 +1,9 @@
+{
+  "name": "mageworx/module-searchsuitesphinxmeta",
+  "version": "3.2.0",
+  "type": "metapackage",
+  "require": {
+    "mageworx/module-searchsuitesphinxbase": "3.2.0",
+    "mageworx/module-searchsuiteautocomplete": "2.1.3"
+  }
+}

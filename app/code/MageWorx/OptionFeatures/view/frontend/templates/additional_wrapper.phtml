@@ -1,0 +1,35 @@
+<?php
+/**
+ * Copyright © 2017 MageWorx. All rights reserved.
+ * See LICENSE.txt for license details.
+ */
+/**
+ * @var \MageWorx\OptionFeatures\Block\Product\View\Wrapper $block
+ */
+?>
+<?php
+/**
+ * Template to initialize the optionAdditionalImages widget
+ * Target: option image mode & replace main product image in the gallery
+ * @see MageWorx/OptionFeatures/view/frontend/web/js/swatches/additional.js
+ */
+?>
+<script>
+    require([
+        'jquery',
+        'optionAdditionalImages',
+        'uiRegistry'
+    ], function ($, optionAdditionalImages, registry) {
+        var optionBase = registry.get('mageworxOptionBase');
+        if (optionBase) {
+            optionBase.addUpdater(60, optionAdditionalImages(<?php echo $block->getAllOptionsJson();?>));
+        } else {
+            var updaters = registry.get('mageworxOptionUpdaters');
+            if (!updaters) {
+                updaters = {};
+            }
+            updaters[60] = optionAdditionalImages(<?php echo $block->getAllOptionsJson();?>);
+            registry.set('mageworxOptionUpdaters', updaters);
+        }
+    });
+</script>

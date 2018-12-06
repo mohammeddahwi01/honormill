@@ -1,0 +1,105 @@
+ .product-options-wrapper .fieldset .attribute-filter-container{display:none; }
+ 
+.cat-title span{
+     text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    font-family: poppins;
+        position: relative;
+    top: -109px;
+    font-style: normal;
+    text-transform: capitalize;
+    
+    color: #fff;
+    font-size: 30px;
+        font-style: normal;
+    text-transform: capitalize;
+}
+.cat-header-sec{ text-align: center; height: 150px; }
+
+.cat-header-sec::before {
+    
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 327px !important;
+}
+.category-imag{display:none !important; }
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .cat-title span{ top:-80px !important; }
+ 
+#placeholder-header{height:142px !important;  }  
+
+ .cat-header-sec::before {
+    
+    content: '';
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 293px !important;
+}
+
+}
+
+.product-sub-infomation .sku{display:none !important; }
+
+.shipaccordion{background-color: #fff;
+    color: #121212;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    outline: 0;
+    font-size: 16px;
+    transition: .4s;
+    border: solid 1px #121212;
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    text-transform: uppercase;
+}
+
+.shipaccordion:hover {
+    border: solid 1px #c1aa81 !important;
+    background-color: #c1aa81 !important;
+    color: #fff;
+}
+
+.shipaccordion.active:hover {
+    border: solid 1px #c1aa81  !important;
+    background-color: #c1aa81  !important;
+    color: #fff;
+}
+
+.shipaccordion.active {
+    border: solid 1px #121212 !important;
+    background-color: #121212 !important;
+    color: #fff;
+}
+.shipaccordion.active:after {
+   content: "\2212";
+    color: #fff;
+}
+
+.shipaccordion:after{ content: '\002B';
+    color: #121212;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+.shipaccordion:hover:after{ color:#fff; }
+
+.shippanel{color: #030303;
+     border-radius:5px;
+    padding: 5px;
+
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 25px;}
+
+.accordion.active{ background: #121212; color: #fff; }

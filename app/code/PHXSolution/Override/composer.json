@@ -1,0 +1,26 @@
+{
+    "name": "phxsolution/module-override",
+    "description": "",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Mage2Gen",
+            "email": "info@mage2gen.com"
+        },
+        {
+            "name": "Vijay Pithava",
+            "email": "vijayp@phxsolution.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PHXSolution\\Override\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

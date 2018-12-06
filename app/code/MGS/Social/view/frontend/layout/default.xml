@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--referenceContainer name="sidebar.additional">
+            <block class="MGS\Social\Block\FacebookLikeBox" name="social.facebook.page.plugin" after="-" template="MGS_Social::fb-page-plugin.phtml" cacheable="false"/>
+        </referenceContainer-->
+        <referenceContainer name="before.body.end">
+            <block class="Magento\Framework\View\Element\Template" name="social.facebook.page.plugin.scripts" template="MGS_Social::scripts.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
